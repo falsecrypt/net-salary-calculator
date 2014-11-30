@@ -1,0 +1,1012 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1214343919B8661E00078C18 /* BNGrossNetWageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1214343819B8661E00078C18 /* BNGrossNetWageViewController.m */; };
+		1214343D19B86B1C00078C18 /* BNGrossNetWagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1214343C19B86B1C00078C18 /* BNGrossNetWagePresenter.m */; };
+		1214344019B86C1200078C18 /* BNGrossNetWageInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1214343F19B86C1200078C18 /* BNGrossNetWageInteractor.m */; };
+		1216EE8019B5C5E5009A0CBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE7F19B5C5E5009A0CBC /* Foundation.framework */; };
+		1216EE8219B5C5E5009A0CBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE8119B5C5E5009A0CBC /* CoreGraphics.framework */; };
+		1216EE8419B5C5E5009A0CBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE8319B5C5E5009A0CBC /* UIKit.framework */; };
+		1216EE8619B5C5E5009A0CBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE8519B5C5E5009A0CBC /* CoreData.framework */; };
+		1216EE8C19B5C5E5009A0CBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1216EE8A19B5C5E5009A0CBC /* InfoPlist.strings */; };
+		1216EE8E19B5C5E5009A0CBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1216EE8D19B5C5E5009A0CBC /* main.m */; };
+		1216EE9219B5C5E5009A0CBC /* BNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1216EE9119B5C5E5009A0CBC /* BNAppDelegate.m */; };
+		1216EE9819B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1216EE9619B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld */; };
+		1216EEA019B5C5E5009A0CBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1216EE9F19B5C5E5009A0CBC /* Images.xcassets */; };
+		1216EEA719B5C5E6009A0CBC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EEA619B5C5E6009A0CBC /* XCTest.framework */; };
+		1216EEA819B5C5E6009A0CBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE7F19B5C5E5009A0CBC /* Foundation.framework */; };
+		1216EEA919B5C5E6009A0CBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE8319B5C5E5009A0CBC /* UIKit.framework */; };
+		1216EEAA19B5C5E6009A0CBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE8519B5C5E5009A0CBC /* CoreData.framework */; };
+		1216EEB219B5C5E6009A0CBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1216EEB019B5C5E6009A0CBC /* InfoPlist.strings */; };
+		1216EEB419B5C5E6009A0CBC /* Net_salary_calculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1216EEB319B5C5E6009A0CBC /* Net_salary_calculatorTests.m */; };
+		1223B9A519BB7D2500C9979C /* BNWageDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223B9A419BB7D2500C9979C /* BNWageDataManager.m */; };
+		1223B9A819BB8E3600C9979C /* BNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223B9A719BB8E3600C9979C /* BNSettingsViewController.m */; };
+		12366A7419CE17CC006A89C7 /* BNLabelSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12366A7319CE17CC006A89C7 /* BNLabelSwitchCell.m */; };
+		123E125019BB775000F4E967 /* BNCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 123E124F19BB775000F4E967 /* BNCoreDataStore.m */; };
+		124553E819C5B6DF006EE299 /* UITextField+TextFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 124553E719C5B6DF006EE299 /* UITextField+TextFormatting.m */; };
+		12464C6E19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12464C6D19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m */; };
+		126AFE0019BC815A0089432E /* BNInlinePickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 126AFDFF19BC815A0089432E /* BNInlinePickerViewManager.m */; };
+		126AFE0719BC8FFD0089432E /* BNPickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 126AFE0619BC8FFD0089432E /* BNPickerViewCell.m */; };
+		12C42B5419DF06A200262DB4 /* BNLabelDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C42B5319DF06A200262DB4 /* BNLabelDetailCell.m */; };
+		12C42B5719DF231900262DB4 /* BNHealthInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C42B5619DF231900262DB4 /* BNHealthInsuranceViewController.m */; };
+		12EE40F219BB954B0076CE80 /* BNLabelInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */; };
+		84316B9C19FDA78B0097A4CB /* BNWageTaxCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */; };
+		843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A8AEF1A067CD40058004E /* BNWageUserInput.m */; };
+		848120921A2B54C300900370 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120581A2B54C300900370 /* MagicalImportFunctions.m */; };
+		848120931A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481205A1A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.m */; };
+		848120941A2B54C300900370 /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481205C1A2B54C300900370 /* NSEntityDescription+MagicalDataImport.m */; };
+		848120951A2B54C300900370 /* NSNumber+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481205E1A2B54C300900370 /* NSNumber+MagicalDataImport.m */; };
+		848120961A2B54C300900370 /* NSObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120601A2B54C300900370 /* NSObject+MagicalDataImport.m */; };
+		848120971A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120621A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.m */; };
+		848120981A2B54C300900370 /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120641A2B54C300900370 /* NSString+MagicalDataImport.m */; };
+		848120991A2B54C300900370 /* NSManagedObject+MagicalAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120671A2B54C300900370 /* NSManagedObject+MagicalAggregation.m */; };
+		8481209A1A2B54C300900370 /* NSManagedObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120691A2B54C300900370 /* NSManagedObject+MagicalDataImport.m */; };
+		8481209B1A2B54C300900370 /* NSManagedObject+MagicalFinders.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481206B1A2B54C300900370 /* NSManagedObject+MagicalFinders.m */; };
+		8481209C1A2B54C300900370 /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481206D1A2B54C300900370 /* NSManagedObject+MagicalRecord.m */; };
+		8481209D1A2B54C300900370 /* NSManagedObject+MagicalRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481206F1A2B54C300900370 /* NSManagedObject+MagicalRequests.m */; };
+		8481209E1A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120721A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.m */; };
+		8481209F1A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120741A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.m */; };
+		848120A01A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120761A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.m */; };
+		848120A11A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120781A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.m */; };
+		848120A21A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481207A1A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m */; };
+		848120A31A2B54C300900370 /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481207C1A2B54C300900370 /* NSPersistentStore+MagicalRecord.m */; };
+		848120A41A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481207E1A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
+		848120A51A2B54C300900370 /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120811A2B54C300900370 /* MagicalRecord+Actions.m */; };
+		848120A61A2B54C300900370 /* MagicalRecord+ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120831A2B54C300900370 /* MagicalRecord+ErrorHandling.m */; };
+		848120A71A2B54C300900370 /* MagicalRecord+iCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120851A2B54C300900370 /* MagicalRecord+iCloud.m */; };
+		848120A81A2B54C300900370 /* MagicalRecord+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120871A2B54C300900370 /* MagicalRecord+Options.m */; };
+		848120A91A2B54C300900370 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120891A2B54C300900370 /* MagicalRecord+Setup.m */; };
+		848120AA1A2B54C300900370 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481208B1A2B54C300900370 /* MagicalRecord+ShorthandSupport.m */; };
+		848120AB1A2B54C300900370 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481208D1A2B54C300900370 /* MagicalRecord.m */; };
+		848286781A06EC4E003DF0F6 /* BNFederalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848286771A06EC4E003DF0F6 /* BNFederalState.m */; };
+		8482867C1A06EEA9003DF0F6 /* BNFederalStateRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482867B1A06EEA9003DF0F6 /* BNFederalStateRepository.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1216EEAB19B5C5E6009A0CBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1216EE7419B5C5E5009A0CBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1216EE7B19B5C5E5009A0CBC;
+			remoteInfo = "Brutto-Netto-Rechner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1214343719B8661E00078C18 /* BNGrossNetWageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNGrossNetWageViewController.h; path = ViewControllers/BNGrossNetWageViewController.h; sourceTree = "<group>"; };
+		1214343819B8661E00078C18 /* BNGrossNetWageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNGrossNetWageViewController.m; path = ViewControllers/BNGrossNetWageViewController.m; sourceTree = "<group>"; };
+		1214343B19B86B1C00078C18 /* BNGrossNetWagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGrossNetWagePresenter.h; sourceTree = "<group>"; };
+		1214343C19B86B1C00078C18 /* BNGrossNetWagePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGrossNetWagePresenter.m; sourceTree = "<group>"; };
+		1214343E19B86C1200078C18 /* BNGrossNetWageInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGrossNetWageInteractor.h; sourceTree = "<group>"; };
+		1214343F19B86C1200078C18 /* BNGrossNetWageInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGrossNetWageInteractor.m; sourceTree = "<group>"; };
+		1214344A19B8761500078C18 /* BNGrossNetWageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGrossNetWageView.h; sourceTree = "<group>"; };
+		1214344D19B87A8E00078C18 /* BNGrossNetWageInteractorIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGrossNetWageInteractorIO.h; sourceTree = "<group>"; };
+		1216EE7C19B5C5E5009A0CBC /* Net_salary_calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Net_salary_calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1216EE7F19B5C5E5009A0CBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1216EE8119B5C5E5009A0CBC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1216EE8319B5C5E5009A0CBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1216EE8519B5C5E5009A0CBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1216EE8919B5C5E5009A0CBC /* Net-salary-calculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Net-salary-calculator-Info.plist"; sourceTree = "<group>"; };
+		1216EE8D19B5C5E5009A0CBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1216EE8F19B5C5E5009A0CBC /* Net-salary-calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Net-salary-calculator-Prefix.pch"; sourceTree = "<group>"; };
+		1216EE9019B5C5E5009A0CBC /* BNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNAppDelegate.h; sourceTree = "<group>"; };
+		1216EE9119B5C5E5009A0CBC /* BNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNAppDelegate.m; sourceTree = "<group>"; };
+		1216EE9719B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brutto_Netto_Rechner.xcdatamodel; sourceTree = "<group>"; };
+		1216EE9F19B5C5E5009A0CBC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Net-salary-calculator/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		1216EEA519B5C5E6009A0CBC /* Net_salary_calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Net_salary_calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1216EEA619B5C5E6009A0CBC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1216EEAF19B5C5E6009A0CBC /* Net_salary_calculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Net_salary_calculatorTests-Info.plist"; sourceTree = "<group>"; };
+		1216EEB319B5C5E6009A0CBC /* Net_salary_calculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Net_salary_calculatorTests.m; sourceTree = "<group>"; };
+		121E364919D87BF9008EED3B /* BNPickerManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPickerManagerDelegate.h; sourceTree = "<group>"; };
+		1223B9A319BB7D2500C9979C /* BNWageDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageDataManager.h; sourceTree = "<group>"; };
+		1223B9A419BB7D2500C9979C /* BNWageDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageDataManager.m; sourceTree = "<group>"; };
+		1223B9A619BB8E3600C9979C /* BNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNSettingsViewController.h; path = ViewControllers/BNSettingsViewController.h; sourceTree = "<group>"; };
+		1223B9A719BB8E3600C9979C /* BNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNSettingsViewController.m; path = ViewControllers/BNSettingsViewController.m; sourceTree = "<group>"; };
+		12366A7219CE17CC006A89C7 /* BNLabelSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLabelSwitchCell.h; sourceTree = "<group>"; };
+		12366A7319CE17CC006A89C7 /* BNLabelSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLabelSwitchCell.m; sourceTree = "<group>"; };
+		123E124E19BB775000F4E967 /* BNCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCoreDataStore.h; sourceTree = "<group>"; };
+		123E124F19BB775000F4E967 /* BNCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNCoreDataStore.m; sourceTree = "<group>"; };
+		124553E619C5B6DF006EE299 /* UITextField+TextFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFormatting.h"; sourceTree = "<group>"; };
+		124553E719C5B6DF006EE299 /* UITextField+TextFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TextFormatting.m"; sourceTree = "<group>"; };
+		12464C6A19E1A61F006A8CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		12464C6B19E1A61F006A8CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		12464C6C19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNCommonInsuranceViewController.h; path = ViewControllers/BNCommonInsuranceViewController.h; sourceTree = "<group>"; };
+		12464C6D19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNCommonInsuranceViewController.m; path = ViewControllers/BNCommonInsuranceViewController.m; sourceTree = "<group>"; };
+		126AFDFE19BC815A0089432E /* BNInlinePickerViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNInlinePickerViewManager.h; sourceTree = "<group>"; };
+		126AFDFF19BC815A0089432E /* BNInlinePickerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNInlinePickerViewManager.m; sourceTree = "<group>"; };
+		126AFE0519BC8FFD0089432E /* BNPickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPickerViewCell.h; sourceTree = "<group>"; };
+		126AFE0619BC8FFD0089432E /* BNPickerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNPickerViewCell.m; sourceTree = "<group>"; };
+		12B2412E19C5E0BE009C4714 /* BNPickerManagerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPickerManagerDataSource.h; sourceTree = "<group>"; };
+		12C42B5219DF06A200262DB4 /* BNLabelDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLabelDetailCell.h; sourceTree = "<group>"; };
+		12C42B5319DF06A200262DB4 /* BNLabelDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLabelDetailCell.m; sourceTree = "<group>"; };
+		12C42B5519DF231900262DB4 /* BNHealthInsuranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNHealthInsuranceViewController.h; path = ViewControllers/BNHealthInsuranceViewController.h; sourceTree = "<group>"; };
+		12C42B5619DF231900262DB4 /* BNHealthInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNHealthInsuranceViewController.m; path = ViewControllers/BNHealthInsuranceViewController.m; sourceTree = "<group>"; };
+		12EE40F019BB954B0076CE80 /* BNLabelInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLabelInputCell.h; sourceTree = "<group>"; };
+		12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLabelInputCell.m; sourceTree = "<group>"; };
+		84316B9A19FDA78B0097A4CB /* BNWageTaxCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageTaxCalculator.h; sourceTree = "<group>"; };
+		84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageTaxCalculator.m; sourceTree = "<group>"; };
+		843A8AEE1A067CD40058004E /* BNWageUserInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageUserInput.h; sourceTree = "<group>"; };
+		843A8AEF1A067CD40058004E /* BNWageUserInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageUserInput.m; sourceTree = "<group>"; };
+		848120571A2B54C300900370 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
+		848120581A2B54C300900370 /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
+		848120591A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		8481205A1A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributeDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		8481205B1A2B54C300900370 /* NSEntityDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		8481205C1A2B54C300900370 /* NSEntityDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		8481205D1A2B54C300900370 /* NSNumber+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MagicalDataImport.h"; sourceTree = "<group>"; };
+		8481205E1A2B54C300900370 /* NSNumber+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MagicalDataImport.m"; sourceTree = "<group>"; };
+		8481205F1A2B54C300900370 /* NSObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		848120601A2B54C300900370 /* NSObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		848120611A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRelationshipDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		848120621A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRelationshipDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		848120631A2B54C300900370 /* NSString+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MagicalDataImport.h"; sourceTree = "<group>"; };
+		848120641A2B54C300900370 /* NSString+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MagicalDataImport.m"; sourceTree = "<group>"; };
+		848120661A2B54C300900370 /* NSManagedObject+MagicalAggregation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalAggregation.h"; sourceTree = "<group>"; };
+		848120671A2B54C300900370 /* NSManagedObject+MagicalAggregation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalAggregation.m"; sourceTree = "<group>"; };
+		848120681A2B54C300900370 /* NSManagedObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		848120691A2B54C300900370 /* NSManagedObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		8481206A1A2B54C300900370 /* NSManagedObject+MagicalFinders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalFinders.h"; sourceTree = "<group>"; };
+		8481206B1A2B54C300900370 /* NSManagedObject+MagicalFinders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalFinders.m"; sourceTree = "<group>"; };
+		8481206C1A2B54C300900370 /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
+		8481206D1A2B54C300900370 /* NSManagedObject+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRecord.m"; sourceTree = "<group>"; };
+		8481206E1A2B54C300900370 /* NSManagedObject+MagicalRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRequests.h"; sourceTree = "<group>"; };
+		8481206F1A2B54C300900370 /* NSManagedObject+MagicalRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRequests.m"; sourceTree = "<group>"; };
+		848120711A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalObserving.h"; sourceTree = "<group>"; };
+		848120721A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalObserving.m"; sourceTree = "<group>"; };
+		848120731A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalRecord.h"; sourceTree = "<group>"; };
+		848120741A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalRecord.m"; sourceTree = "<group>"; };
+		848120751A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalSaves.h"; sourceTree = "<group>"; };
+		848120761A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalSaves.m"; sourceTree = "<group>"; };
+		848120771A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalThreading.h"; sourceTree = "<group>"; };
+		848120781A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalThreading.m"; sourceTree = "<group>"; };
+		848120791A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+MagicalRecord.h"; sourceTree = "<group>"; };
+		8481207A1A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+MagicalRecord.m"; sourceTree = "<group>"; };
+		8481207B1A2B54C300900370 /* NSPersistentStore+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStore+MagicalRecord.h"; sourceTree = "<group>"; };
+		8481207C1A2B54C300900370 /* NSPersistentStore+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+MagicalRecord.m"; sourceTree = "<group>"; };
+		8481207D1A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStoreCoordinator+MagicalRecord.h"; sourceTree = "<group>"; };
+		8481207E1A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+MagicalRecord.m"; sourceTree = "<group>"; };
+		848120801A2B54C300900370 /* MagicalRecord+Actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Actions.h"; sourceTree = "<group>"; };
+		848120811A2B54C300900370 /* MagicalRecord+Actions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Actions.m"; sourceTree = "<group>"; };
+		848120821A2B54C300900370 /* MagicalRecord+ErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+ErrorHandling.h"; sourceTree = "<group>"; };
+		848120831A2B54C300900370 /* MagicalRecord+ErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+ErrorHandling.m"; sourceTree = "<group>"; };
+		848120841A2B54C300900370 /* MagicalRecord+iCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+iCloud.h"; sourceTree = "<group>"; };
+		848120851A2B54C300900370 /* MagicalRecord+iCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+iCloud.m"; sourceTree = "<group>"; };
+		848120861A2B54C300900370 /* MagicalRecord+Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Options.h"; sourceTree = "<group>"; };
+		848120871A2B54C300900370 /* MagicalRecord+Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Options.m"; sourceTree = "<group>"; };
+		848120881A2B54C300900370 /* MagicalRecord+Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Setup.h"; sourceTree = "<group>"; };
+		848120891A2B54C300900370 /* MagicalRecord+Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Setup.m"; sourceTree = "<group>"; };
+		8481208A1A2B54C300900370 /* MagicalRecord+ShorthandSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+ShorthandSupport.h"; sourceTree = "<group>"; };
+		8481208B1A2B54C300900370 /* MagicalRecord+ShorthandSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+ShorthandSupport.m"; sourceTree = "<group>"; };
+		8481208C1A2B54C300900370 /* MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecord.h; sourceTree = "<group>"; };
+		8481208D1A2B54C300900370 /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
+		8481208E1A2B54C300900370 /* MagicalRecordDeprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordDeprecated.h; sourceTree = "<group>"; };
+		8481208F1A2B54C300900370 /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
+		848120901A2B54C300900370 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
+		848120911A2B54C300900370 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CoreData+MagicalRecord.h"; path = "Net-salary-calculator/Vendor/MagicalRecord v2.3.0/MagicalRecord/CoreData+MagicalRecord.h"; sourceTree = SOURCE_ROOT; };
+		848286761A06EC4E003DF0F6 /* BNFederalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNFederalState.h; sourceTree = "<group>"; };
+		848286771A06EC4E003DF0F6 /* BNFederalState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNFederalState.m; sourceTree = "<group>"; };
+		8482867A1A06EEA9003DF0F6 /* BNFederalStateRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNFederalStateRepository.h; sourceTree = "<group>"; };
+		8482867B1A06EEA9003DF0F6 /* BNFederalStateRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNFederalStateRepository.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1216EE7919B5C5E5009A0CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216EE8219B5C5E5009A0CBC /* CoreGraphics.framework in Frameworks */,
+				1216EE8619B5C5E5009A0CBC /* CoreData.framework in Frameworks */,
+				1216EE8419B5C5E5009A0CBC /* UIKit.framework in Frameworks */,
+				1216EE8019B5C5E5009A0CBC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216EEA219B5C5E6009A0CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216EEA719B5C5E6009A0CBC /* XCTest.framework in Frameworks */,
+				1216EEAA19B5C5E6009A0CBC /* CoreData.framework in Frameworks */,
+				1216EEA919B5C5E6009A0CBC /* UIKit.framework in Frameworks */,
+				1216EEA819B5C5E6009A0CBC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12052F8019B7555800B83679 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		12052F8119B7559500B83679 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1216EE9F19B5C5E5009A0CBC /* Images.xcassets */,
+			);
+			name = Images;
+			path = "Net-salary-calculator/Images.xcassets";
+			sourceTree = SOURCE_ROOT;
+		};
+		12052F8219B755A300B83679 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				12052FE219B7591400B83679 /* AppDelegate */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		12052F8319B755CA00B83679 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				848286791A06EE26003DF0F6 /* Repository */,
+				848286751A06EBDD003DF0F6 /* Value Object */,
+				123E124D19BB76AC00F4E967 /* Manager */,
+				1214344B19B879F700078C18 /* Data Store */,
+				12052F8619B757C900B83679 /* Interactor */,
+				12052F8419B755D000B83679 /* Persistence */,
+			);
+			name = Model;
+			path = "Net-salary-calculator/Model";
+			sourceTree = SOURCE_ROOT;
+		};
+		12052F8419B755D000B83679 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				1216EE9619B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld */,
+			);
+			name = Persistence;
+			path = Model/Persistence;
+			sourceTree = "<group>";
+		};
+		12052F8519B7560100B83679 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				12052F8919B7586000B83679 /* MagicalRecord v2.3.0-beta.5 */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		12052F8619B757C900B83679 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1214343E19B86C1200078C18 /* BNGrossNetWageInteractor.h */,
+				1214343F19B86C1200078C18 /* BNGrossNetWageInteractor.m */,
+				84316B9A19FDA78B0097A4CB /* BNWageTaxCalculator.h */,
+				84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		12052F8719B757F400B83679 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		12052F8819B757FC00B83679 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				843A8AED1A067C920058004E /* ViewModel */,
+				126AFE0119BC81600089432E /* Manager */,
+				12EE40EF19BB94EA0076CE80 /* Custom Views */,
+				1223B9A919BB8EBD00C9979C /* ViewControllers */,
+				1214344919B875D100078C18 /* Protocols */,
+				1214343A19B86A1E00078C18 /* Presenters */,
+			);
+			name = View;
+			path = "Net-salary-calculator/View";
+			sourceTree = SOURCE_ROOT;
+		};
+		12052F8919B7586000B83679 /* MagicalRecord v2.3.0-beta.5 */ = {
+			isa = PBXGroup;
+			children = (
+				848120541A2B545E00900370 /* MagicalRecord */,
+			);
+			name = "MagicalRecord v2.3.0-beta.5";
+			path = "Net-salary-calculator/Vendor/MagicalRecord v2.3.0";
+			sourceTree = "<group>";
+		};
+		12052FE219B7591400B83679 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1216EE9019B5C5E5009A0CBC /* BNAppDelegate.h */,
+				1216EE9119B5C5E5009A0CBC /* BNAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1214343A19B86A1E00078C18 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				1214343B19B86B1C00078C18 /* BNGrossNetWagePresenter.h */,
+				1214343C19B86B1C00078C18 /* BNGrossNetWagePresenter.m */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		1214344919B875D100078C18 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1214344A19B8761500078C18 /* BNGrossNetWageView.h */,
+				12B2412E19C5E0BE009C4714 /* BNPickerManagerDataSource.h */,
+				121E364919D87BF9008EED3B /* BNPickerManagerDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1214344B19B879F700078C18 /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				123E124E19BB775000F4E967 /* BNCoreDataStore.h */,
+				123E124F19BB775000F4E967 /* BNCoreDataStore.m */,
+			);
+			path = "Data Store";
+			sourceTree = "<group>";
+		};
+		1214344C19B87A5400078C18 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1214344D19B87A8E00078C18 /* BNGrossNetWageInteractorIO.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		12159C5319C49C7D00741C01 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				124553E619C5B6DF006EE299 /* UITextField+TextFormatting.h */,
+				124553E719C5B6DF006EE299 /* UITextField+TextFormatting.m */,
+			);
+			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		1216EE7319B5C5E5009A0CBC = {
+			isa = PBXGroup;
+			children = (
+				1216EE8719B5C5E5009A0CBC /* Net_salary_calculator */,
+				1216EEAD19B5C5E6009A0CBC /* Net_salary_calculatorTests */,
+				1216EE7E19B5C5E5009A0CBC /* Frameworks */,
+				1216EE7D19B5C5E5009A0CBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1216EE7D19B5C5E5009A0CBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1216EE7C19B5C5E5009A0CBC /* Net_salary_calculator.app */,
+				1216EEA519B5C5E6009A0CBC /* Net_salary_calculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1216EE7E19B5C5E5009A0CBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1216EE7F19B5C5E5009A0CBC /* Foundation.framework */,
+				1216EE8119B5C5E5009A0CBC /* CoreGraphics.framework */,
+				1216EE8319B5C5E5009A0CBC /* UIKit.framework */,
+				1216EE8519B5C5E5009A0CBC /* CoreData.framework */,
+				1216EEA619B5C5E6009A0CBC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1216EE8719B5C5E5009A0CBC /* Net_salary_calculator */ = {
+			isa = PBXGroup;
+			children = (
+				12159C5319C49C7D00741C01 /* Helper Classes */,
+				1214344C19B87A5400078C18 /* Protocols */,
+				12052F8819B757FC00B83679 /* View */,
+				12052F8719B757F400B83679 /* Services */,
+				12052F8519B7560100B83679 /* Vendor */,
+				12052F8319B755CA00B83679 /* Model */,
+				12052F8219B755A300B83679 /* Delegates */,
+				12052F8119B7559500B83679 /* Images */,
+				12052F8019B7555800B83679 /* Storyboard */,
+				1216EE8819B5C5E5009A0CBC /* Supporting Files */,
+			);
+			name = Net_salary_calculator;
+			path = "Net-salary-calculator";
+			sourceTree = SOURCE_ROOT;
+		};
+		1216EE8819B5C5E5009A0CBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1216EE8919B5C5E5009A0CBC /* Net-salary-calculator-Info.plist */,
+				1216EE8A19B5C5E5009A0CBC /* InfoPlist.strings */,
+				1216EE8D19B5C5E5009A0CBC /* main.m */,
+				1216EE8F19B5C5E5009A0CBC /* Net-salary-calculator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = "Net-salary-calculator/Supporting Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		1216EEAD19B5C5E6009A0CBC /* Net_salary_calculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				1216EEB319B5C5E6009A0CBC /* Net_salary_calculatorTests.m */,
+				1216EEAE19B5C5E6009A0CBC /* Supporting Files */,
+			);
+			name = Net_salary_calculatorTests;
+			path = "Net-salary-calculatorTests";
+			sourceTree = "<group>";
+		};
+		1216EEAE19B5C5E6009A0CBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1216EEAF19B5C5E6009A0CBC /* Net_salary_calculatorTests-Info.plist */,
+				1216EEB019B5C5E6009A0CBC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1223B9A919BB8EBD00C9979C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1214343719B8661E00078C18 /* BNGrossNetWageViewController.h */,
+				1214343819B8661E00078C18 /* BNGrossNetWageViewController.m */,
+				1223B9A619BB8E3600C9979C /* BNSettingsViewController.h */,
+				1223B9A719BB8E3600C9979C /* BNSettingsViewController.m */,
+				12C42B5519DF231900262DB4 /* BNHealthInsuranceViewController.h */,
+				12C42B5619DF231900262DB4 /* BNHealthInsuranceViewController.m */,
+				12464C6C19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.h */,
+				12464C6D19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		123E124D19BB76AC00F4E967 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1223B9A319BB7D2500C9979C /* BNWageDataManager.h */,
+				1223B9A419BB7D2500C9979C /* BNWageDataManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		126AFE0119BC81600089432E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				126AFDFE19BC815A0089432E /* BNInlinePickerViewManager.h */,
+				126AFDFF19BC815A0089432E /* BNInlinePickerViewManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		12EE40EF19BB94EA0076CE80 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				12EE40F019BB954B0076CE80 /* BNLabelInputCell.h */,
+				12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */,
+				126AFE0519BC8FFD0089432E /* BNPickerViewCell.h */,
+				126AFE0619BC8FFD0089432E /* BNPickerViewCell.m */,
+				12366A7219CE17CC006A89C7 /* BNLabelSwitchCell.h */,
+				12366A7319CE17CC006A89C7 /* BNLabelSwitchCell.m */,
+				12C42B5219DF06A200262DB4 /* BNLabelDetailCell.h */,
+				12C42B5319DF06A200262DB4 /* BNLabelDetailCell.m */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		843A8AED1A067C920058004E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				843A8AEE1A067CD40058004E /* BNWageUserInput.h */,
+				843A8AEF1A067CD40058004E /* BNWageUserInput.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		848120541A2B545E00900370 /* MagicalRecord */ = {
+			isa = PBXGroup;
+			children = (
+				848120551A2B54C300900370 /* Categories */,
+				8481207F1A2B54C300900370 /* Core */,
+				848120911A2B54C300900370 /* CoreData+MagicalRecord.h */,
+			);
+			path = MagicalRecord;
+			sourceTree = "<group>";
+		};
+		848120551A2B54C300900370 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				848120561A2B54C300900370 /* DataImport */,
+				848120651A2B54C300900370 /* NSManagedObject */,
+				848120701A2B54C300900370 /* NSManagedObjectContext */,
+				848120791A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.h */,
+				8481207A1A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m */,
+				8481207B1A2B54C300900370 /* NSPersistentStore+MagicalRecord.h */,
+				8481207C1A2B54C300900370 /* NSPersistentStore+MagicalRecord.m */,
+				8481207D1A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.h */,
+				8481207E1A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.m */,
+			);
+			name = Categories;
+			path = "Net-salary-calculator/Vendor/MagicalRecord v2.3.0/MagicalRecord/Categories";
+			sourceTree = SOURCE_ROOT;
+		};
+		848120561A2B54C300900370 /* DataImport */ = {
+			isa = PBXGroup;
+			children = (
+				848120571A2B54C300900370 /* MagicalImportFunctions.h */,
+				848120581A2B54C300900370 /* MagicalImportFunctions.m */,
+				848120591A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.h */,
+				8481205A1A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.m */,
+				8481205B1A2B54C300900370 /* NSEntityDescription+MagicalDataImport.h */,
+				8481205C1A2B54C300900370 /* NSEntityDescription+MagicalDataImport.m */,
+				8481205D1A2B54C300900370 /* NSNumber+MagicalDataImport.h */,
+				8481205E1A2B54C300900370 /* NSNumber+MagicalDataImport.m */,
+				8481205F1A2B54C300900370 /* NSObject+MagicalDataImport.h */,
+				848120601A2B54C300900370 /* NSObject+MagicalDataImport.m */,
+				848120611A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.h */,
+				848120621A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.m */,
+				848120631A2B54C300900370 /* NSString+MagicalDataImport.h */,
+				848120641A2B54C300900370 /* NSString+MagicalDataImport.m */,
+			);
+			path = DataImport;
+			sourceTree = "<group>";
+		};
+		848120651A2B54C300900370 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				848120661A2B54C300900370 /* NSManagedObject+MagicalAggregation.h */,
+				848120671A2B54C300900370 /* NSManagedObject+MagicalAggregation.m */,
+				848120681A2B54C300900370 /* NSManagedObject+MagicalDataImport.h */,
+				848120691A2B54C300900370 /* NSManagedObject+MagicalDataImport.m */,
+				8481206A1A2B54C300900370 /* NSManagedObject+MagicalFinders.h */,
+				8481206B1A2B54C300900370 /* NSManagedObject+MagicalFinders.m */,
+				8481206C1A2B54C300900370 /* NSManagedObject+MagicalRecord.h */,
+				8481206D1A2B54C300900370 /* NSManagedObject+MagicalRecord.m */,
+				8481206E1A2B54C300900370 /* NSManagedObject+MagicalRequests.h */,
+				8481206F1A2B54C300900370 /* NSManagedObject+MagicalRequests.m */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		848120701A2B54C300900370 /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				848120711A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.h */,
+				848120721A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.m */,
+				848120731A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.h */,
+				848120741A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.m */,
+				848120751A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.h */,
+				848120761A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.m */,
+				848120771A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.h */,
+				848120781A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.m */,
+			);
+			path = NSManagedObjectContext;
+			sourceTree = "<group>";
+		};
+		8481207F1A2B54C300900370 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				848120801A2B54C300900370 /* MagicalRecord+Actions.h */,
+				848120811A2B54C300900370 /* MagicalRecord+Actions.m */,
+				848120821A2B54C300900370 /* MagicalRecord+ErrorHandling.h */,
+				848120831A2B54C300900370 /* MagicalRecord+ErrorHandling.m */,
+				848120841A2B54C300900370 /* MagicalRecord+iCloud.h */,
+				848120851A2B54C300900370 /* MagicalRecord+iCloud.m */,
+				848120861A2B54C300900370 /* MagicalRecord+Options.h */,
+				848120871A2B54C300900370 /* MagicalRecord+Options.m */,
+				848120881A2B54C300900370 /* MagicalRecord+Setup.h */,
+				848120891A2B54C300900370 /* MagicalRecord+Setup.m */,
+				8481208A1A2B54C300900370 /* MagicalRecord+ShorthandSupport.h */,
+				8481208B1A2B54C300900370 /* MagicalRecord+ShorthandSupport.m */,
+				8481208C1A2B54C300900370 /* MagicalRecord.h */,
+				8481208D1A2B54C300900370 /* MagicalRecord.m */,
+				8481208E1A2B54C300900370 /* MagicalRecordDeprecated.h */,
+				8481208F1A2B54C300900370 /* MagicalRecordLogging.h */,
+				848120901A2B54C300900370 /* MagicalRecordShorthand.h */,
+			);
+			name = Core;
+			path = "Net-salary-calculator/Vendor/MagicalRecord v2.3.0/MagicalRecord/Core";
+			sourceTree = SOURCE_ROOT;
+		};
+		848286751A06EBDD003DF0F6 /* Value Object */ = {
+			isa = PBXGroup;
+			children = (
+				848286761A06EC4E003DF0F6 /* BNFederalState.h */,
+				848286771A06EC4E003DF0F6 /* BNFederalState.m */,
+			);
+			path = "Value Object";
+			sourceTree = "<group>";
+		};
+		848286791A06EE26003DF0F6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8482867A1A06EEA9003DF0F6 /* BNFederalStateRepository.h */,
+				8482867B1A06EEA9003DF0F6 /* BNFederalStateRepository.m */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1216EE7B19B5C5E5009A0CBC /* Net_salary_calculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1216EEB719B5C5E6009A0CBC /* Build configuration list for PBXNativeTarget "Net_salary_calculator" */;
+			buildPhases = (
+				1216EE7819B5C5E5009A0CBC /* Sources */,
+				1216EE7919B5C5E5009A0CBC /* Frameworks */,
+				1216EE7A19B5C5E5009A0CBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Net_salary_calculator;
+			productName = "Brutto-Netto-Rechner";
+			productReference = 1216EE7C19B5C5E5009A0CBC /* Net_salary_calculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1216EEA419B5C5E6009A0CBC /* Net_salary_calculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1216EEBA19B5C5E6009A0CBC /* Build configuration list for PBXNativeTarget "Net_salary_calculatorTests" */;
+			buildPhases = (
+				1216EEA119B5C5E6009A0CBC /* Sources */,
+				1216EEA219B5C5E6009A0CBC /* Frameworks */,
+				1216EEA319B5C5E6009A0CBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1216EEAC19B5C5E6009A0CBC /* PBXTargetDependency */,
+			);
+			name = Net_salary_calculatorTests;
+			productName = "Brutto-Netto-RechnerTests";
+			productReference = 1216EEA519B5C5E6009A0CBC /* Net_salary_calculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1216EE7419B5C5E5009A0CBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "QSoft-Factory | Pavel Ermolin";
+				TargetAttributes = {
+					1216EE7B19B5C5E5009A0CBC = {
+						DevelopmentTeam = VA4A4324U6;
+					};
+					1216EEA419B5C5E6009A0CBC = {
+						TestTargetID = 1216EE7B19B5C5E5009A0CBC;
+					};
+				};
+			};
+			buildConfigurationList = 1216EE7719B5C5E5009A0CBC /* Build configuration list for PBXProject "Net_salary_calculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+			);
+			mainGroup = 1216EE7319B5C5E5009A0CBC;
+			productRefGroup = 1216EE7D19B5C5E5009A0CBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1216EE7B19B5C5E5009A0CBC /* Net_salary_calculator */,
+				1216EEA419B5C5E6009A0CBC /* Net_salary_calculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1216EE7A19B5C5E5009A0CBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216EEA019B5C5E5009A0CBC /* Images.xcassets in Resources */,
+				1216EE8C19B5C5E5009A0CBC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216EEA319B5C5E6009A0CBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216EEB219B5C5E6009A0CBC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1216EE7819B5C5E5009A0CBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216EE9819B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld in Sources */,
+				848286781A06EC4E003DF0F6 /* BNFederalState.m in Sources */,
+				1214343D19B86B1C00078C18 /* BNGrossNetWagePresenter.m in Sources */,
+				8481209A1A2B54C300900370 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				1214343919B8661E00078C18 /* BNGrossNetWageViewController.m in Sources */,
+				848120A21A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */,
+				848120981A2B54C300900370 /* NSString+MagicalDataImport.m in Sources */,
+				848120921A2B54C300900370 /* MagicalImportFunctions.m in Sources */,
+				8481209B1A2B54C300900370 /* NSManagedObject+MagicalFinders.m in Sources */,
+				848120A01A2B54C300900370 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
+				84316B9C19FDA78B0097A4CB /* BNWageTaxCalculator.m in Sources */,
+				1223B9A519BB7D2500C9979C /* BNWageDataManager.m in Sources */,
+				1216EE9219B5C5E5009A0CBC /* BNAppDelegate.m in Sources */,
+				12EE40F219BB954B0076CE80 /* BNLabelInputCell.m in Sources */,
+				848120941A2B54C300900370 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				848120AB1A2B54C300900370 /* MagicalRecord.m in Sources */,
+				848120991A2B54C300900370 /* NSManagedObject+MagicalAggregation.m in Sources */,
+				126AFE0719BC8FFD0089432E /* BNPickerViewCell.m in Sources */,
+				8481209D1A2B54C300900370 /* NSManagedObject+MagicalRequests.m in Sources */,
+				123E125019BB775000F4E967 /* BNCoreDataStore.m in Sources */,
+				1214344019B86C1200078C18 /* BNGrossNetWageInteractor.m in Sources */,
+				848120931A2B54C300900370 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				848120971A2B54C300900370 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
+				848120961A2B54C300900370 /* NSObject+MagicalDataImport.m in Sources */,
+				848120A91A2B54C300900370 /* MagicalRecord+Setup.m in Sources */,
+				848120A11A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				8481209E1A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				848120A81A2B54C300900370 /* MagicalRecord+Options.m in Sources */,
+				126AFE0019BC815A0089432E /* BNInlinePickerViewManager.m in Sources */,
+				8482867C1A06EEA9003DF0F6 /* BNFederalStateRepository.m in Sources */,
+				8481209C1A2B54C300900370 /* NSManagedObject+MagicalRecord.m in Sources */,
+				848120A61A2B54C300900370 /* MagicalRecord+ErrorHandling.m in Sources */,
+				124553E819C5B6DF006EE299 /* UITextField+TextFormatting.m in Sources */,
+				1223B9A819BB8E3600C9979C /* BNSettingsViewController.m in Sources */,
+				848120A71A2B54C300900370 /* MagicalRecord+iCloud.m in Sources */,
+				12C42B5419DF06A200262DB4 /* BNLabelDetailCell.m in Sources */,
+				12C42B5719DF231900262DB4 /* BNHealthInsuranceViewController.m in Sources */,
+				12366A7419CE17CC006A89C7 /* BNLabelSwitchCell.m in Sources */,
+				848120AA1A2B54C300900370 /* MagicalRecord+ShorthandSupport.m in Sources */,
+				848120A41A2B54C300900370 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				848120951A2B54C300900370 /* NSNumber+MagicalDataImport.m in Sources */,
+				848120A51A2B54C300900370 /* MagicalRecord+Actions.m in Sources */,
+				12464C6E19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m in Sources */,
+				8481209F1A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				1216EE8E19B5C5E5009A0CBC /* main.m in Sources */,
+				848120A31A2B54C300900370 /* NSPersistentStore+MagicalRecord.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1216EEA119B5C5E6009A0CBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1216EEB419B5C5E6009A0CBC /* Net_salary_calculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1216EEAC19B5C5E6009A0CBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1216EE7B19B5C5E5009A0CBC /* Net_salary_calculator */;
+			targetProxy = 1216EEAB19B5C5E6009A0CBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1216EE8A19B5C5E5009A0CBC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12464C6A19E1A61F006A8CA9 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1216EEB019B5C5E6009A0CBC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12464C6B19E1A61F006A8CA9 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1216EEB519B5C5E6009A0CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1216EEB619B5C5E6009A0CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1216EEB819B5C5E6009A0CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Net-salary-calculator/Supporting Files/Net-salary-calculator-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Net-salary-calculator/Supporting Files/Net-salary-calculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1216EEB919B5C5E6009A0CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Net-salary-calculator/Supporting Files/Net-salary-calculator-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Net-salary-calculator/Supporting Files/Net-salary-calculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1216EEBB19B5C5E6009A0CBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Net_salary_calculator.app/Net_salary_calculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Net-salary-calculator/Supporting Files/Net-salary-calculator-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Net-salary-calculatorTests/Net_salary_calculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1216EEBC19B5C5E6009A0CBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Net_salary_calculator.app/Net_salary_calculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Net-salary-calculator/Supporting Files/Net-salary-calculator-Prefix.pch";
+				INFOPLIST_FILE = "Net-salary-calculatorTests/Net_salary_calculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1216EE7719B5C5E5009A0CBC /* Build configuration list for PBXProject "Net_salary_calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1216EEB519B5C5E6009A0CBC /* Debug */,
+				1216EEB619B5C5E6009A0CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1216EEB719B5C5E6009A0CBC /* Build configuration list for PBXNativeTarget "Net_salary_calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1216EEB819B5C5E6009A0CBC /* Debug */,
+				1216EEB919B5C5E6009A0CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1216EEBA19B5C5E6009A0CBC /* Build configuration list for PBXNativeTarget "Net_salary_calculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1216EEBB19B5C5E6009A0CBC /* Debug */,
+				1216EEBC19B5C5E6009A0CBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1216EE9619B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1216EE9719B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodel */,
+			);
+			currentVersion = 1216EE9719B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodel */;
+			path = Brutto_Netto_Rechner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1216EE7419B5C5E5009A0CBC /* Project object */;
+}
