@@ -17,7 +17,6 @@
 		1216EE8C19B5C5E5009A0CBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1216EE8A19B5C5E5009A0CBC /* InfoPlist.strings */; };
 		1216EE8E19B5C5E5009A0CBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1216EE8D19B5C5E5009A0CBC /* main.m */; };
 		1216EE9219B5C5E5009A0CBC /* BNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1216EE9119B5C5E5009A0CBC /* BNAppDelegate.m */; };
-		1216EE9819B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1216EE9619B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld */; };
 		1216EEA019B5C5E5009A0CBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1216EE9F19B5C5E5009A0CBC /* Images.xcassets */; };
 		1216EEA719B5C5E6009A0CBC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EEA619B5C5E6009A0CBC /* XCTest.framework */; };
 		1216EEA819B5C5E6009A0CBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216EE7F19B5C5E5009A0CBC /* Foundation.framework */; };
@@ -36,6 +35,10 @@
 		12C42B5419DF06A200262DB4 /* BNLabelDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C42B5319DF06A200262DB4 /* BNLabelDetailCell.m */; };
 		12C42B5719DF231900262DB4 /* BNHealthInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C42B5619DF231900262DB4 /* BNHealthInsuranceViewController.m */; };
 		12EE40F219BB954B0076CE80 /* BNLabelInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */; };
+		840EA8991A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */; };
+		840EA89C1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */; };
+		840EA89F1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */; };
+		843124D61A2BE5D100F0F8A9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 843124D41A2BE5D100F0F8A9 /* Model.xcdatamodeld */; };
 		84316B9C19FDA78B0097A4CB /* BNWageTaxCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */; };
 		843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A8AEF1A067CD40058004E /* BNWageUserInput.m */; };
 		848120921A2B54C300900370 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 848120581A2B54C300900370 /* MagicalImportFunctions.m */; };
@@ -97,7 +100,6 @@
 		1216EE8F19B5C5E5009A0CBC /* Net-salary-calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Net-salary-calculator-Prefix.pch"; sourceTree = "<group>"; };
 		1216EE9019B5C5E5009A0CBC /* BNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNAppDelegate.h; sourceTree = "<group>"; };
 		1216EE9119B5C5E5009A0CBC /* BNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNAppDelegate.m; sourceTree = "<group>"; };
-		1216EE9719B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brutto_Netto_Rechner.xcdatamodel; sourceTree = "<group>"; };
 		1216EE9F19B5C5E5009A0CBC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Net-salary-calculator/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		1216EEA519B5C5E6009A0CBC /* Net_salary_calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Net_salary_calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1216EEA619B5C5E6009A0CBC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -129,6 +131,13 @@
 		12C42B5619DF231900262DB4 /* BNHealthInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNHealthInsuranceViewController.m; path = ViewControllers/BNHealthInsuranceViewController.m; sourceTree = "<group>"; };
 		12EE40F019BB954B0076CE80 /* BNLabelInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLabelInputCell.h; sourceTree = "<group>"; };
 		12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLabelInputCell.m; sourceTree = "<group>"; };
+		840EA8971A2B8D5C0042EB38 /* BNHealthInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNHealthInsurancePresenter.h; sourceTree = "<group>"; };
+		840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNHealthInsurancePresenter.m; sourceTree = "<group>"; };
+		840EA89A1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNStatutoryInsurancePresenter.h; sourceTree = "<group>"; };
+		840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNStatutoryInsurancePresenter.m; sourceTree = "<group>"; };
+		840EA89D1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUnemploymentInsurancePresenter.h; sourceTree = "<group>"; };
+		840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNUnemploymentInsurancePresenter.m; sourceTree = "<group>"; };
+		843124D51A2BE5D100F0F8A9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		84316B9A19FDA78B0097A4CB /* BNWageTaxCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageTaxCalculator.h; sourceTree = "<group>"; };
 		84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageTaxCalculator.m; sourceTree = "<group>"; };
 		843A8AEE1A067CD40058004E /* BNWageUserInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageUserInput.h; sourceTree = "<group>"; };
@@ -262,10 +271,9 @@
 		12052F8419B755D000B83679 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				1216EE9619B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld */,
+				843124D41A2BE5D100F0F8A9 /* Model.xcdatamodeld */,
 			);
-			name = Persistence;
-			path = Model/Persistence;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		12052F8519B7560100B83679 /* Vendor */ = {
@@ -331,6 +339,12 @@
 			children = (
 				1214343B19B86B1C00078C18 /* BNGrossNetWagePresenter.h */,
 				1214343C19B86B1C00078C18 /* BNGrossNetWagePresenter.m */,
+				840EA8971A2B8D5C0042EB38 /* BNHealthInsurancePresenter.h */,
+				840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */,
+				840EA89A1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.h */,
+				840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */,
+				840EA89D1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.h */,
+				840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -731,13 +745,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1216EE9819B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld in Sources */,
 				848286781A06EC4E003DF0F6 /* BNFederalState.m in Sources */,
 				1214343D19B86B1C00078C18 /* BNGrossNetWagePresenter.m in Sources */,
 				8481209A1A2B54C300900370 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				1214343919B8661E00078C18 /* BNGrossNetWageViewController.m in Sources */,
 				848120A21A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */,
+				840EA89C1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m in Sources */,
 				848120981A2B54C300900370 /* NSString+MagicalDataImport.m in Sources */,
 				848120921A2B54C300900370 /* MagicalImportFunctions.m in Sources */,
 				8481209B1A2B54C300900370 /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -760,6 +774,7 @@
 				848120A11A2B54C300900370 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				8481209E1A2B54C300900370 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				848120A81A2B54C300900370 /* MagicalRecord+Options.m in Sources */,
+				840EA8991A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m in Sources */,
 				126AFE0019BC815A0089432E /* BNInlinePickerViewManager.m in Sources */,
 				8482867C1A06EEA9003DF0F6 /* BNFederalStateRepository.m in Sources */,
 				8481209C1A2B54C300900370 /* NSManagedObject+MagicalRecord.m in Sources */,
@@ -777,6 +792,8 @@
 				12464C6E19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m in Sources */,
 				8481209F1A2B54C300900370 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				1216EE8E19B5C5E5009A0CBC /* main.m in Sources */,
+				843124D61A2BE5D100F0F8A9 /* Model.xcdatamodeld in Sources */,
+				840EA89F1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m in Sources */,
 				848120A31A2B54C300900370 /* NSPersistentStore+MagicalRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -996,13 +1013,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1216EE9619B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodeld */ = {
+		843124D41A2BE5D100F0F8A9 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1216EE9719B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodel */,
+				843124D51A2BE5D100F0F8A9 /* Model.xcdatamodel */,
 			);
-			currentVersion = 1216EE9719B5C5E5009A0CBC /* Brutto_Netto_Rechner.xcdatamodel */;
-			path = Brutto_Netto_Rechner.xcdatamodeld;
+			currentVersion = 843124D51A2BE5D100F0F8A9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

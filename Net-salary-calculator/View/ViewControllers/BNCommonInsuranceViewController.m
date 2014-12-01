@@ -89,10 +89,10 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
             cell = [self configureAsNonInsuredCell:cell];
         }
         else if (indexPath.row == ThirdCell) {
-            cell = [self configureAsEmployerConstributionOnlyCell:cell];
+            cell = [self configureAsEmployerContributionOnlyCell:cell];
         }
         else if (indexPath.row == FourthCell) {
-            cell = [self configureAsEmployeeConstributionOnlyCell:cell];
+            cell = [self configureAsEmployeeContributionOnlyCell:cell];
         }
     }
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -140,14 +140,14 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
     return cell;
 }
 
-- (UITableViewCell *)configureAsEmployerConstributionOnlyCell:(UITableViewCell *)cell {
+- (UITableViewCell *)configureAsEmployerContributionOnlyCell:(UITableViewCell *)cell {
     
     cell.textLabel.text = @"Arbeitgeber Anteil";
     cell.textLabel.textColor = [UIColor grayColor];
     return cell;
 }
 
-- (UITableViewCell *)configureAsEmployeeConstributionOnlyCell:(UITableViewCell *)cell {
+- (UITableViewCell *)configureAsEmployeeContributionOnlyCell:(UITableViewCell *)cell {
     
     cell.textLabel.text = @"Arbeitnehmer Anteil";
     cell.textLabel.textColor = [UIColor grayColor];

@@ -31,4 +31,7 @@
 - (void)federalStateNameWasSelected:(NSString *)stateName;
 - (NSArray *)stateNamesForDisplay;
 - (NSString *)defaultFederalState;
+- (void)didSelectHealthInsuranceCell;
+- (void)didSelectPensionInsuranceCell;
+- (void)didSelectUnemploymentInsuranceCell;
 @end

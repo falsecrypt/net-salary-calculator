@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BNHealthInsurancePresenter;
+
 @interface BNHealthInsuranceViewController : UITableViewController
+
+@property (nonatomic, strong) BNHealthInsurancePresenter *presenter;
 
 @end

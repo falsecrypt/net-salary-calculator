@@ -10,6 +10,19 @@
 
 @class BNFederalState;
 
+typedef NS_ENUM(NSInteger, HealthInsuranceType) {
+    HealthInsuranceTypeStatutory, /* Gesetzlich pflichtversichert */
+    HealthInsuranceTypePrivate /* Privat versichert */
+};
+
+typedef NS_ENUM(NSInteger, CommonInsuranceType) { /* Optionen für Renten- und Arbeitslosenversicherung */
+    CommonInsuranceTypeStatutory, /* Gesetzlich */
+    CommonInsuranceTypeUninsured, /* Nicht versichert */
+    CommonInsuranceTypeEmployerContributionOnly, /* Arbeitgeber Anteil */
+    CommonInsuranceTypeEmployeeContributionOnly /* Arbeitnehmer Anteil */
+};
+
+
 @interface BNWageUserInput : NSObject
 @property (nonatomic, strong) NSDecimalNumber *grossWage;
 @property (nonatomic, strong) NSDecimalNumber *taxAllowance;
@@ -19,4 +32,7 @@
 @property (nonatomic, assign) BOOL hasChildren;
 @property (nonatomic, strong) BNFederalState* federalState;
 @property (nonatomic, strong) NSNumber *yearOfBirth;
+@property (nonatomic, assign) HealthInsuranceType healthInsurance;
+@property (nonatomic, assign) CommonInsuranceType *pensionInsurance;
+@property (nonatomic, assign) CommonInsuranceType *unemploymentInsurance;
 @end

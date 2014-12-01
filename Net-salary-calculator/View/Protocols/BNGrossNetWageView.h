@@ -11,4 +11,5 @@
 @protocol BNGrossNetWageView <NSObject>
 - (void)insertChildAllowanceCell;
 - (void)removeChildAllowanceCell;
+- (void)navigateToViewController:(UIViewController *)toViewController;
 @end

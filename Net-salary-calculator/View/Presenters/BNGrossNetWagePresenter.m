@@ -10,6 +10,9 @@
 #import "UITextField+TextFormatting.h"
 #import "BNFederalStateRepository.h"
 #import "BNFederalState.h"
+#import "BNHealthInsuranceViewController.h"
+#import "BNCommonInsuranceViewController.h"
+#import "BNHealthInsurancePresenter.h"
 
 @interface BNGrossNetWagePresenter ()
 @property (nonatomic, strong) BNFederalStateRepository *stateRepository;
@@ -107,6 +110,26 @@
 
 - (void)federalStateNameWasSelected:(NSString *)stateName {
     [self.interactor storeCurrentFederalState:[self.stateRepository federalStateByName:stateName]];
+}
+
+// Navigating to another views, maybe should move this logic to a special 'Routing' class?
+
+- (void)didSelectHealthInsuranceCell {
+    BNHealthInsuranceViewController *destination = [[BNHealthInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    BNHealthInsurancePresenter *presenter = [[BNHealthInsurancePresenter alloc] init];
+    destination.presenter = presenter;
+    presenter.interactor = self.interactor;
+    [self.view navigateToViewController:destination];
+}
+
+- (void)didSelectPensionInsuranceCell {
+    BNCommonInsuranceViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypePension];
+    [self.view navigateToViewController:destination];
+}
+
+- (void)didSelectUnemploymentInsuranceCell {
+    BNCommonInsuranceViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypeUnemployment];
+    [self.view navigateToViewController:destination];
 }
 
 @end

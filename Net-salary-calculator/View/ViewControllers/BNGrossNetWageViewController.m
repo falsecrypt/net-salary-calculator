@@ -12,8 +12,7 @@
 #import "BNGrossNetWagePresenter.h"
 #import "BNLabelSwitchCell.h"
 #import "BNLabelDetailCell.h"
-#import "BNHealthInsuranceViewController.h"
-#import "BNCommonInsuranceViewController.h"
+
 
 /*
  Felder:
@@ -532,17 +531,18 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         return [self.pickerViewCellsManager tableView:tableView didSelectRowAtIndexPath:indexPath];
     }
     else if ([indexPath isEqual:self.healthInsuranceCellIndexPath]) {
-        UITableViewController *destination = [[BNHealthInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        [self.navigationController pushViewController:destination animated:YES];
+        [self.presenter didSelectHealthInsuranceCell];
     }
     else if ([indexPath isEqual:self.pensionInsuranceCellIndexPath]) {
-        UITableViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypePension];
-        [self.navigationController pushViewController:destination animated:YES];
+        [self.presenter didSelectPensionInsuranceCell];
     }
     else if ([indexPath isEqual:self.unemploymentInsuranceCellIndexPath]) {
-        UITableViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypeUnemployment];
-        [self.navigationController pushViewController:destination animated:YES];
+        [self.presenter didSelectUnemploymentInsuranceCell];
     }
+}
+
+- (void)navigateToViewController:(UIViewController *)toViewController {
+    [self.navigationController pushViewController:toViewController animated:YES];
 }
 
 // TODO move this to presenter
