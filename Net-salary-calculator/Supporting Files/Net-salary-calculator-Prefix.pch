@@ -5,9 +5,17 @@
 //
 
 #import <Availability.h>
+#import "BNUtility.h"
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#define NSLog(...)
 #endif
 
 #ifdef __OBJC__

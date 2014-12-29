@@ -11,7 +11,7 @@
 @protocol BNPickerManagerDataSource <NSObject>
 
 - (NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath;
-- (NSString *)cellDefaultValueForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)cellCurrentValueForIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)pickerDataToSelectForIndexPath:(NSIndexPath *)indexPath;
 
 

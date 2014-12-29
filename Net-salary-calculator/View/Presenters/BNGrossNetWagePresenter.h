@@ -27,11 +27,22 @@
 - (BOOL)taxAllowanceFieldShouldBeginEditing:(UITextField *)taxAllowanceField;
 - (BOOL)yearOfBirthFieldShouldReturn:(UITextField *)field;
 - (void)hasChildrenValueChangedTo:(BOOL)newValue;
+- (void)hasChurchTaxValueChangedTo:(BOOL)newValue;
 - (BOOL)currentHasChildrenValue;
+- (BOOL)currentHasChurchTaxValue;
 - (void)federalStateNameWasSelected:(NSString *)stateName;
 - (NSArray *)stateNamesForDisplay;
-- (NSString *)defaultFederalState;
+- (NSArray *)availableTaxClasses;
+- (NSString *)currentFederalState;
 - (void)didSelectHealthInsuranceCell;
 - (void)didSelectPensionInsuranceCell;
 - (void)didSelectUnemploymentInsuranceCell;
+- (void)didSelectTaxClassValueIndex:(NSInteger)dataIndex;
+- (void)didSelectFederalStateValueIndex:(NSInteger)dataIndex;
+// current values
+- (NSDecimalNumber *)currentGrossWageValue;
+- (NSDecimalNumber *)currentTaxAllowanceValue;
+- (NSNumber *)currentBirthdayYearValue;
+- (NSNumber *)currentTargetYearValue;
+
 @end

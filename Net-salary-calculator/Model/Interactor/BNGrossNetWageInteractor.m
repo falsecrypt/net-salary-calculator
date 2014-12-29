@@ -11,9 +11,22 @@
 #import "BNWageUserInput.h"
 #import "BNFederalState.h"
 
+@interface TaxClass : NSObject
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSNumber *value;
+@property (nonatomic, assign) BOOL hasFactor;
+@end
+
+@implementation TaxClass
+@end
+
+//////////
+
 @interface BNGrossNetWageInteractor ()
 @property (nonatomic, strong) BNWageDataManager *dataManager;
 @property (nonatomic, strong) BNWageUserInput *userInput;
+@property (nonatomic, strong) BNWageUserInput *userInputDefault;
+@property (nonatomic, strong) NSArray *taxClassOptions;
 @end
 
 @implementation BNGrossNetWageInteractor
@@ -22,40 +35,134 @@
     if ((self = [super init]))
     {
         _dataManager = dataManager;
-        _userInput = [self fillWithDefaultValues:[BNWageUserInput new]];
+        _userInput = [BNWageUserInput new];
+        [self setupDefaultUserInput];
     }
     return self;
 }
 
-- (BNWageUserInput *)fillWithDefaultValues:(BNWageUserInput *)input {
-    input.hasChildren = NO;
-    input.grossWage = [NSDecimalNumber decimalNumberWithString:@"0.0"];
-    input.taxAllowance = [NSDecimalNumber decimalNumberWithString:@"0.0"];
-    input.taxClass = @(1);
-    input.hasChurchTax = YES;
+- (void)setupDefaultUserInput {
+    _userInputDefault = [BNWageUserInput new];
+    _userInputDefault.hasChildren = NO;
+    _userInputDefault.grossWage = [NSDecimalNumber decimalNumberWithString:@"0.0"];
+    _userInputDefault.taxAllowance = [NSDecimalNumber decimalNumberWithString:@"0.0"];
+    _userInputDefault.taxClass = @(1);
+    _userInputDefault.hasChurchTax = YES;
+    _userInputDefault.targetYear = @([BNUtility getCurrentYear]);
+}
+
+- (NSArray *)taxClassOptions {
+    if (!_taxClassOptions) {
+        NSMutableArray *objs = [NSMutableArray array];
+        for (NSInteger i = 1; i <= 4 ; i++) {
+            TaxClass *taxClass = [TaxClass new];
+            taxClass.name = [NSString stringWithFormat:@"Klasse %@", @(i)];
+            taxClass.value = @(i);
+            [objs addObject:taxClass];
+        }
+        
+        TaxClass *taxClass4Factor = [TaxClass new];
+        taxClass4Factor.name = @"Klasse 4 mit Faktor";
+        taxClass4Factor.value = @(4);
+        taxClass4Factor.hasFactor = YES;
+        [objs addObject:taxClass4Factor];
+        
+        for (NSInteger i = 5; i <= 6 ; i++) {
+            TaxClass *taxClass = [TaxClass new];
+            taxClass.name = [NSString stringWithFormat:@"Klasse %@", @(i)];
+            taxClass.value = @(i);
+            [objs addObject:taxClass];
+        }
+        
+        _taxClassOptions = [objs copy];
+    }
+    return _taxClassOptions;
+}
+
+/**
+ * Call this method before giving the values to interactor
+ */
+- (BNWageUserInput *)mergeWithDefaultValues:(BNWageUserInput *)input {
+    input.hasChildren = input.hasChildren ? input.hasChildren : self.userInputDefault.hasChildren;
+    input.grossWage = input.grossWage ? input.grossWage : self.userInputDefault.grossWage;
+    input.taxAllowance = input.taxAllowance ? input.taxAllowance : self.userInputDefault.taxAllowance;
+    input.taxClass = input.taxClass ? input.taxClass : self.userInputDefault.taxClass;
+    input.hasChurchTax = input.hasChurchTax ? input.hasChurchTax : self.userInputDefault.hasChurchTax;
     return input;
 }
 
-- (void)storeCurrentGrossWage:(NSDecimalNumber *)wage {
-    if (!wage) {
-        return;
+- (void)storeCurrentTargetYear:(NSNumber *)year {
+    [self.userInput setTargetYear:year]; // can be null
+}
+
+- (NSNumber *)currentTargetYear {
+    if (self.userInput.targetYear) {
+        return self.userInput.targetYear;
     }
-    [self.userInput setGrossWage:wage];
+    else {
+        return self.userInputDefault.targetYear;
+    }
+}
+
+- (void)storeCurrentGrossWage:(NSDecimalNumber *)wage {
+    [self.userInput setGrossWage:wage]; // can be null
+}
+
+- (NSDecimalNumber *)currentGrossWage {
+    if (self.userInput.grossWage) {
+        return self.userInput.grossWage;
+    }
+    else {
+        return nil;
+    }
 }
 
 - (void)storeCurrentTaxAllowance:(NSDecimalNumber *)value {
-    if (!value) {
-        return;
-    }
     [self.userInput setTaxAllowance:value];
+}
+
+- (NSDecimalNumber *)currentTaxAllowance {
+    if (self.userInput.taxAllowance) {
+        return self.userInput.taxAllowance;
+    }
+    else {
+        return nil;
+    }
 }
 
 - (void)storeCurrentHasChildrenFlag:(BOOL)hasChildren {
     [self.userInput setHasChildren:hasChildren];
 }
 
+- (void)storeCurrentHasChurchTaxFlag:(BOOL)churchTax {
+    [self.userInput setHasChurchTax:churchTax];
+}
+
 - (BOOL)currentHasChildrenFlag {
-    return self.userInput.hasChildren;
+    if (self.userInput.hasChildren) {
+        return self.userInput.hasChildren;
+    }
+    else {
+        return self.userInputDefault.hasChildren;
+    }
+}
+
+- (BOOL)currenthasChurchTaxFlag {
+    if (self.userInput.hasChurchTax) {
+        return self.userInput.hasChurchTax;
+    }
+    else {
+        return self.userInputDefault.hasChurchTax;
+    }
+}
+
+- (NSString *)currentFederalState {
+    if (self.userInput.federalState) {
+        return self.userInput.federalState.name;
+    }
+    else {
+        return @"Baden-Württemberg";
+    }
 }
 
 - (void)storeCurrentFederalState:(BNFederalState *)state {
@@ -70,6 +177,30 @@
         return;
     }
     [self.userInput setYearOfBirth:year];
+}
+
+- (NSNumber *)currentBirthdayYear {
+    if (self.userInput.yearOfBirth) {
+        return self.userInput.yearOfBirth;
+    }
+    else {
+        return nil;
+    }
+}
+
+- (NSArray *)taxClasses {
+    // return all tax class names
+    return [self.taxClassOptions valueForKeyPath:@"name"];
+}
+
+- (void)taxClassSelectedAtDataIndex:(NSInteger)index {
+    DLog(@"New Tax Class: %@", [(self.taxClassOptions[index]) name]);
+    TaxClass *selected = self.taxClassOptions[index];
+    [self.userInput setTaxClass:selected.value];
+}
+
+- (void)federalStateSelected:(BNFederalState *)state {
+    [self.userInput setFederalState:state];
 }
 
 @end

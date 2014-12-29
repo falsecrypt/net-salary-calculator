@@ -38,6 +38,7 @@
 		840EA8991A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */; };
 		840EA89C1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */; };
 		840EA89F1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */; };
+		8427B0371A507B5600FDD8D2 /* BNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427B0361A507B5600FDD8D2 /* BNUtility.m */; };
 		843124D61A2BE5D100F0F8A9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 843124D41A2BE5D100F0F8A9 /* Model.xcdatamodeld */; };
 		84316B9C19FDA78B0097A4CB /* BNWageTaxCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */; };
 		843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A8AEF1A067CD40058004E /* BNWageUserInput.m */; };
@@ -137,6 +138,8 @@
 		840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNStatutoryInsurancePresenter.m; sourceTree = "<group>"; };
 		840EA89D1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUnemploymentInsurancePresenter.h; sourceTree = "<group>"; };
 		840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNUnemploymentInsurancePresenter.m; sourceTree = "<group>"; };
+		8427B0351A507B5600FDD8D2 /* BNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUtility.h; sourceTree = "<group>"; };
+		8427B0361A507B5600FDD8D2 /* BNUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNUtility.m; sourceTree = "<group>"; };
 		843124D51A2BE5D100F0F8A9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		84316B9A19FDA78B0097A4CB /* BNWageTaxCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageTaxCalculator.h; sourceTree = "<group>"; };
 		84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageTaxCalculator.m; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 			children = (
 				124553E619C5B6DF006EE299 /* UITextField+TextFormatting.h */,
 				124553E719C5B6DF006EE299 /* UITextField+TextFormatting.m */,
+				8427B0351A507B5600FDD8D2 /* BNUtility.h */,
+				8427B0361A507B5600FDD8D2 /* BNUtility.m */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 				1214343919B8661E00078C18 /* BNGrossNetWageViewController.m in Sources */,
 				848120A21A2B54C300900370 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */,
+				8427B0371A507B5600FDD8D2 /* BNUtility.m in Sources */,
 				840EA89C1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m in Sources */,
 				848120981A2B54C300900370 /* NSString+MagicalDataImport.m in Sources */,
 				848120921A2B54C300900370 /* MagicalImportFunctions.m in Sources */,

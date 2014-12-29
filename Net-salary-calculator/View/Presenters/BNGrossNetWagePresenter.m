@@ -33,13 +33,17 @@
     if (!grossWageField) {
         return NO;
     }
-    
-    [self.interactor storeCurrentGrossWage:[grossWageField currencyNumber]];
-    [grossWageField setText:[grossWageField currencyString]];
+    if (grossWageField.text.length) {
+        [self.interactor storeCurrentGrossWage:[grossWageField currencyNumber]];
+        [grossWageField setText:[grossWageField currencyString]];
+    }
+    else {
+       [self.interactor storeCurrentGrossWage:nil];
+    }
+
     [grossWageField resignFirstResponder];
     
     return YES;
-    
 }
 
 - (BOOL)grossWageFieldShouldBeginEditing:(UITextField *)grossWageField {
@@ -54,8 +58,14 @@
     if(!taxAllowanceField) {
         return NO;
     }
-    [self.interactor storeCurrentTaxAllowance:[taxAllowanceField currencyNumber]];
-    [taxAllowanceField setText:[taxAllowanceField currencyString]];
+    if (taxAllowanceField.text.length) {
+        [self.interactor storeCurrentTaxAllowance:[taxAllowanceField currencyNumber]];
+        [taxAllowanceField setText:[taxAllowanceField currencyString]];
+    }
+    else {
+        [self.interactor storeCurrentTaxAllowance:nil];
+    }
+
     [taxAllowanceField resignFirstResponder];
     
     return YES;
@@ -91,8 +101,16 @@
     }
 }
 
+- (void)hasChurchTaxValueChangedTo:(BOOL)newValue {
+    [self.interactor storeCurrentHasChurchTaxFlag:newValue];
+}
+
 - (BOOL)currentHasChildrenValue {
     return [self.interactor currentHasChildrenFlag];
+}
+
+- (BOOL)currentHasChurchTaxValue {
+    return [self.interactor currenthasChurchTaxFlag];
 }
 
 - (NSArray *)stateNamesForDisplay {
@@ -104,8 +122,12 @@
     return [names copy];
 }
 
-- (NSString *)defaultFederalState {
-    return [((BNFederalState *)[[self.stateRepository availableStates] firstObject]) name];
+- (NSArray *)availableTaxClasses {
+    return [self.interactor taxClasses];
+}
+
+- (NSString *)currentFederalState {
+    return [self.interactor currentFederalState];
 }
 
 - (void)federalStateNameWasSelected:(NSString *)stateName {
@@ -130,6 +152,30 @@
 - (void)didSelectUnemploymentInsuranceCell {
     BNCommonInsuranceViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypeUnemployment];
     [self.view navigateToViewController:destination];
+}
+
+- (void)didSelectTaxClassValueIndex:(NSInteger)dataIndex {
+    [self.interactor taxClassSelectedAtDataIndex:dataIndex];
+}
+
+- (void)didSelectFederalStateValueIndex:(NSInteger)dataIndex {
+    [self.interactor federalStateSelected:[[self.stateRepository availableStates] objectAtIndex:dataIndex]];
+}
+
+- (NSDecimalNumber *)currentGrossWageValue {
+    return [self.interactor currentGrossWage];
+}
+
+- (NSDecimalNumber *)currentTaxAllowanceValue {
+    return [self.interactor currentTaxAllowance];
+}
+
+- (NSNumber *)currentBirthdayYearValue {
+    return [self.interactor currentBirthdayYear];
+}
+
+- (NSNumber *)currentTargetYearValue {
+    return [self.interactor currentTargetYear];
 }
 
 @end

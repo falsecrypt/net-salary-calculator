@@ -53,10 +53,12 @@
 
 // set frames of our subviews
 - (void)layoutSubviews {
+    [super layoutSubviews];
+    
     CGSize size = self.contentView.frame.size;
     CGFloat titleWidth = floorf(size.width/2.0) - 20.0;
     [self.titleLabel setFrame:CGRectMake(15.0, 0.0, titleWidth, size.height)];
-    [self.valueField setFrame:CGRectMake(titleWidth + 20.0, 0.0, titleWidth + 10.0, size.height)];
+    [self.valueField setFrame:CGRectMake(titleWidth + 20.0, 3.0, titleWidth + 10.0, size.height - 3.0)];
     
 }
 

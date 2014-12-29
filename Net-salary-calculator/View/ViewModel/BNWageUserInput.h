@@ -24,9 +24,10 @@ typedef NS_ENUM(NSInteger, CommonInsuranceType) { /* Optionen für Renten- und A
 
 
 @interface BNWageUserInput : NSObject
-@property (nonatomic, strong) NSDecimalNumber *grossWage;
-@property (nonatomic, strong) NSDecimalNumber *taxAllowance;
-@property (nonatomic, strong) NSString *timePeriod; // todo, use enum
+@property (nonatomic, strong) NSDecimalNumber *grossWage; // 'Brutto'
+@property (nonatomic, strong) NSDecimalNumber *taxAllowance; // 'Freibetrag'
+@property (nonatomic, strong) NSString *timePeriod; // todo, use enum, 'Zeitraum'
+@property (nonatomic, strong) NSNumber *targetYear; // 'Abrechnungsjahr'
 @property (nonatomic, strong) NSNumber *taxClass;
 @property (nonatomic, assign) BOOL hasChurchTax;
 @property (nonatomic, assign) BOOL hasChildren;

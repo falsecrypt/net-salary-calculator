@@ -115,7 +115,7 @@ static NSString * const RightDetailCellIdentifier = @"RightDetailCellIdentifier"
         cell.textLabel.text = [self.pickerDataSource cellTitleForIndexPath:indexPath];
         [cell.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0f]];
         [cell.textLabel setTextColor:[UIColor grayColor]];
-        cell.detailTextLabel.text = [self.pickerDataSource cellDefaultValueForIndexPath:indexPath];
+        cell.detailTextLabel.text = [self.pickerDataSource cellCurrentValueForIndexPath:indexPath];
         [cell.detailTextLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18.0f]];
         cell.detailTextLabel.textColor = [UIColor blackColor];
     }
@@ -182,7 +182,9 @@ static NSString * const RightDetailCellIdentifier = @"RightDetailCellIdentifier"
     // Update text
     [self refreshSelectedValue];
     
-    [self.presenter federalStateNameWasSelected:self.pickerData[row]];
+    [self.pickerDataSource didSelectPickerRow:row atIndexPath:self.currentIndexPath];
+    
+    //[self.presenter federalStateNameWasSelected:self.pickerData[row]];
 }
 
 // The data to return for the row and component (column) that's being passed in

@@ -18,5 +18,5 @@ typedef NS_ENUM(NSInteger, SwitchControlState) {
 - (void)setCustomTitle:(NSString *)title;
 - (void)configureSwitchControlWithTarget:(id)target action:(SEL)action controlEvents:(UIControlEvents)controlEvents;
 - (void)setSwitchControlState:(SwitchControlState)state;
-
+- (void)setSwitchTag:(NSInteger)switchTag;
 @end

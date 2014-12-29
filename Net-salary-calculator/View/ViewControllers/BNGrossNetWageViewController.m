@@ -92,6 +92,8 @@ NSString *titleDetailCell = @"titleDetailCell";
 NSInteger grossWageField = 0;
 NSInteger taxAllowanceField = 1;
 NSInteger birthdayYearField = 2;
+NSInteger customLabelCell = 4123;
+NSInteger hasChildrenSwitch = 4124;
 NSString * const TimePeriodCellKey = @"timePeriodCell";
 NSString * const YearSelectorCellKey = @"yearSelectorCell";
 NSString * const TaxClassSelectorCellKey = @"taxClassSelectorCell";
@@ -129,17 +131,12 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
 {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[BNLabelInputCell class] forCellReuseIdentifier:titleInputCell];
-    [self.tableView registerClass:[BNLabelSwitchCell class] forCellReuseIdentifier:titleSwitchCell];
-    [self.tableView registerClass:[BNLabelDetailCell class] forCellReuseIdentifier:titleDetailCell];
-    
-    
-    self.healthInsuranceCellIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:SecondSection];
-    self.hasChildrenSwitchCellIndexPath = [NSIndexPath indexPathForRow:EighthCell inSection:FirstSection];
-    self.pensionInsuranceCellIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:ThirdSection];
-    self.unemploymentInsuranceCellIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:FourthSection];
-    
-    
+    [self registerCellClasses];
+    [self initIndexPathProperties];
+    [self configureTableView];
+}
+
+- (void)configureTableView {
     CGFloat tableWidth = CGRectGetWidth(self.tableView.frame);
     CGFloat buttonWidth = tableWidth - 10.0 - 10.0;
     UIView *footerContainer = [[UIView alloc]initWithFrame:CGRectMake(0.0, 25.0, tableWidth, 44.0)];
@@ -158,6 +155,19 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 60.0, 0);
 }
 
+- (void)registerCellClasses {
+    [self.tableView registerClass:[BNLabelInputCell class] forCellReuseIdentifier:titleInputCell];
+    [self.tableView registerClass:[BNLabelSwitchCell class] forCellReuseIdentifier:titleSwitchCell];
+    [self.tableView registerClass:[BNLabelDetailCell class] forCellReuseIdentifier:titleDetailCell];
+}
+
+- (void)initIndexPathProperties {
+    self.healthInsuranceCellIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:SecondSection];
+    self.hasChildrenSwitchCellIndexPath = [NSIndexPath indexPathForRow:EighthCell inSection:FirstSection];
+    self.pensionInsuranceCellIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:ThirdSection];
+    self.unemploymentInsuranceCellIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:FourthSection];
+}
+
 // Defines some specific behavior for inline picker cells
 - (BNInlinePickerViewManager *)pickerViewCellsManager {
     if (!_pickerViewCellsManager) {
@@ -174,7 +184,7 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         [_pickerIndexPathForIdentifier setObject:[NSIndexPath indexPathForRow:SecondCell inSection:FirstSection] forKey:TimePeriodCellKey];
         [_pickerIndexPathForIdentifier setObject:[NSIndexPath indexPathForRow:ThirdCell inSection:FirstSection] forKey:YearSelectorCellKey];
         [_pickerIndexPathForIdentifier setObject:[NSIndexPath indexPathForRow:FifthCell inSection:FirstSection] forKey:TaxClassSelectorCellKey];
-        [_pickerIndexPathForIdentifier setObject:[NSIndexPath indexPathForRow:SixthCell inSection:FirstSection] forKey:ChurchTaxCellKey];
+        //[_pickerIndexPathForIdentifier setObject:[NSIndexPath indexPathForRow:SixthCell inSection:FirstSection] forKey:ChurchTaxCellKey];
         [_pickerIndexPathForIdentifier setObject:[NSIndexPath indexPathForRow:SeventhCell inSection:FirstSection] forKey:StateCellKey];
     }
     return _pickerIndexPathForIdentifier;
@@ -322,7 +332,7 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"getting cell number %li", (long)indexPath.row);
+    //DLog(@"getting cell number %li", (long)indexPath.row);
     if ([self.pickerViewCellsManager isManagedPickerCell:indexPath]) {
         
         return [self.pickerViewCellsManager tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -341,7 +351,12 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         }
         else if (currentRow == FourthCell) {
             cell = (BNLabelInputCell *)[tableView dequeueReusableCellWithIdentifier:titleInputCell forIndexPath:indexPath];
-           cell = [self configureAsTaxAllowanceCell:(BNLabelInputCell *)cell];
+            cell = [self configureAsTaxAllowanceCell:(BNLabelInputCell *)cell];
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        }
+        else if (currentRow == SixthCell) {
+            cell = (BNLabelSwitchCell *)[tableView dequeueReusableCellWithIdentifier:titleSwitchCell forIndexPath:indexPath];
+            cell = [self configureAsChurchTaxCell:(BNLabelSwitchCell *)cell];
             [cell setAccessoryType:UITableViewCellAccessoryNone];
         }
         else if (currentRow == EighthCell) {
@@ -411,7 +426,7 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     CGFloat titleWidth = size.width - 40.0;
     [titleLabel setFrame:CGRectMake(15.0, 0.0, titleWidth, size.height)];
     [cell.contentView addSubview:titleLabel];
-    titleLabel.tag = 4123;
+    titleLabel.tag = customLabelCell;
     return cell;
 }
 
@@ -420,6 +435,10 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     [cell setCustomPlaceholder:@"Ihr Bruttolohn in EUR"];
     cell.valueField.delegate = self;
     cell.valueField.tag = grossWageField;
+    NSDecimalNumber *curValue = [self.presenter currentGrossWageValue];
+    if (curValue) {
+        [cell.valueField setText:[BNUtility currencyStringFromDecimalNumber:curValue]];
+    }
     return cell;
 }
 
@@ -428,31 +447,51 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     [cell setCustomPlaceholder:@"Jährlich in EUR"];
     cell.valueField.delegate = self;
     cell.valueField.tag = taxAllowanceField;
+    NSDecimalNumber *curValue = [self.presenter currentTaxAllowanceValue];
+    if (curValue) {
+        [cell.valueField setText:[BNUtility currencyStringFromDecimalNumber:curValue]];
+    }
     return cell;
 }
 
 - (UITableViewCell *)configureAsHealthInsuranceCell:(UITableViewCell *)cell {
-    UILabel *title = (UILabel *)[cell viewWithTag:4123];
+    UILabel *title = (UILabel *)[cell viewWithTag:customLabelCell];
     [title setText:@"Gesetzlich pflichtversichert"];
     return cell;
 }
 
 - (UITableViewCell *)configureAsPensionInsuranceCell:(UITableViewCell *)cell {
-    UILabel *title = (UILabel *)[cell viewWithTag:4123];
+    UILabel *title = (UILabel *)[cell viewWithTag:customLabelCell];
     [title setText:@"Gesetzlich pflichtversichert"];
     return cell;
 }
 
 - (UITableViewCell *)configureAsUnemploymentInsuranceCell:(UITableViewCell *)cell {
-    UILabel *title = (UILabel *)[cell viewWithTag:4123];
+    UILabel *title = (UILabel *)[cell viewWithTag:customLabelCell];
     [title setText:@"Gesetzlich pflichtversichert"];
     return cell;
 }
 
 - (UITableViewCell *)configureAsHasChildrenCell:(BNLabelSwitchCell *)cell {
     [(BNLabelSwitchCell *)cell setCustomTitle:@"Haben Sie Kinder?"];
+    [(BNLabelSwitchCell *)cell setSwitchTag:hasChildrenSwitch];
     // set correct state
     BOOL current = [self.presenter currentHasChildrenValue];
+    if (current == NO) {
+        [(BNLabelSwitchCell *)cell setSwitchControlState:SwitchControlStateOff];
+    }
+    else {
+        [(BNLabelSwitchCell *)cell setSwitchControlState:SwitchControlStateOn];
+    }
+    [(BNLabelSwitchCell *)cell configureSwitchControlWithTarget:self action:@selector(switchChanged:) controlEvents:UIControlEventValueChanged];
+    return cell;
+}
+
+- (UITableViewCell *)configureAsChurchTaxCell:(BNLabelSwitchCell *)cell {
+    [(BNLabelSwitchCell *)cell setCustomTitle:@"Kirchensteuer"];
+    
+    // set correct state
+    BOOL current = [self.presenter currentHasChurchTaxValue];
     if (current == NO) {
         [(BNLabelSwitchCell *)cell setSwitchControlState:SwitchControlStateOff];
     }
@@ -468,13 +507,23 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     ((BNLabelInputCell *)cell).valueField.delegate = self;
     [(BNLabelInputCell *)cell setCustomPlaceholder:@""];
     ((BNLabelInputCell *)cell).valueField.tag = birthdayYearField;
+    NSNumber *curValue = [self.presenter currentBirthdayYearValue];
+    if (curValue) {
+        [((BNLabelInputCell *)cell).valueField setText:[curValue stringValue]];
+    }
     return cell;
 }
 
 - (void)switchChanged:(id)sender {
     UISwitch* switcher = (UISwitch*)sender;
-    BOOL hasChildren = switcher.on;
-    if (hasChildren) {
+    BOOL on = switcher.on;
+    if (switcher.tag != hasChildrenSwitch) {
+        
+        // todo
+        [self.presenter hasChurchTaxValueChangedTo:on];
+        return;
+    }
+    if (on) {
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:NinthCell inSection:FirstSection];
         [self.pickerIndexPathForIdentifier setObject:newIndexPath forKey:ChildAllowanceCellKey];
         [self.pickerViewCellsManager addManagedIndexPath:newIndexPath];
@@ -488,7 +537,7 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     }
     
     
-    [self.presenter hasChildrenValueChangedTo:hasChildren];
+    [self.presenter hasChildrenValueChangedTo:on];
 }
 
 - (void)insertChildAllowanceCell {
@@ -572,13 +621,13 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     return title;
 }
 
-- (NSString *)cellDefaultValueForIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)cellCurrentValueForIndexPath:(NSIndexPath *)indexPath {
     NSString *value = @"";
     if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:TimePeriodCellKey]]) {
         value = @"Jahr";
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:YearSelectorCellKey]]) {
-        value = @"2014"; // todo current year?
+        value = [[self.presenter currentTargetYearValue] stringValue];
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:TaxClassSelectorCellKey]]) {
         value = @"Klasse 1";
@@ -587,7 +636,7 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         value = @"Ja";
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:StateCellKey]]) {
-        value = [self.presenter defaultFederalState];
+        value = [self.presenter currentFederalState];
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:ChildAllowanceCellKey]]) {
         value = @"0";
@@ -606,10 +655,10 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         data = @[ @"2011", @"2012", @"2013", @"2014"];
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:TaxClassSelectorCellKey]]) {
-        data = @[ @"Klasse 1", @"Klasse 2", @"Klasse 3", @"Klasse 3", @"Klasse 4", @"Klasse 4 mit Faktor", @"Klasse 5", @"Klasse 6"];
+        data = [self.presenter availableTaxClasses];
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:ChurchTaxCellKey]]) {
-        data = @[ @"Ja", @"Nein"];
+        data = @[ @"Ja", @"Nein"]; //
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:StateCellKey]]) {
         data = [self.presenter stateNamesForDisplay];
@@ -648,6 +697,15 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         NSIndexPath *correctedPath = [NSIndexPath indexPathForRow:self.hasChildrenSwitchCellIndexPath.row - 1
                                                         inSection:self.hasChildrenSwitchCellIndexPath.section];
         self.hasChildrenSwitchCellIndexPath = correctedPath;
+    }
+}
+
+- (void)didSelectPickerRow:(NSUInteger)row atIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:TaxClassSelectorCellKey]]) {
+        [self.presenter didSelectTaxClassValueIndex:row];
+    }
+    else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:StateCellKey]]) {
+        [self.presenter didSelectFederalStateValueIndex:row];
     }
 }
 

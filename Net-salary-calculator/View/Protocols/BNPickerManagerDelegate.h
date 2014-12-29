@@ -14,5 +14,5 @@
 
 - (void)pickerCellWasInsertedAtIndexPath:(NSIndexPath *)indexPath;
 - (void)pickerCellWasRemovedAtIndexPath:(NSIndexPath *)indexPath;
-
+- (void)didSelectPickerRow:(NSUInteger)row atIndexPath:(NSIndexPath *)indexPath;
 @end
