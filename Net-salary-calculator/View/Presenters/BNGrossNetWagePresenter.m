@@ -178,4 +178,8 @@
     return [self.interactor currentTargetYear];
 }
 
+- (HealthInsuranceType)currentHealthInsurance {
+    return [self.interactor currentHealthInsuranceType];
+}
+
 @end

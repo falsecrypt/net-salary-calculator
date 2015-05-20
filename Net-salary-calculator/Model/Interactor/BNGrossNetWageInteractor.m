@@ -91,34 +91,59 @@
     return input;
 }
 
+#pragma mark - Store methods
+
 - (void)storeCurrentTargetYear:(NSNumber *)year {
     [self.userInput setTargetYear:year]; // can be null
-}
-
-- (NSNumber *)currentTargetYear {
-    if (self.userInput.targetYear) {
-        return self.userInput.targetYear;
-    }
-    else {
-        return self.userInputDefault.targetYear;
-    }
 }
 
 - (void)storeCurrentGrossWage:(NSDecimalNumber *)wage {
     [self.userInput setGrossWage:wage]; // can be null
 }
 
-- (NSDecimalNumber *)currentGrossWage {
-    if (self.userInput.grossWage) {
-        return self.userInput.grossWage;
-    }
-    else {
-        return nil;
-    }
-}
-
 - (void)storeCurrentTaxAllowance:(NSDecimalNumber *)value {
     [self.userInput setTaxAllowance:value];
+}
+
+- (void)storeCurrentHasChildrenFlag:(BOOL)hasChildren {
+    [self.userInput setHasChildren:hasChildren];
+}
+
+- (void)storeCurrentHasChurchTaxFlag:(BOOL)churchTax {
+    [self.userInput setHasChurchTax:churchTax];
+}
+
+- (void)storeCurrentFederalState:(BNFederalState *)state {
+    if (!state) {
+        return;
+    }
+    [self.userInput setFederalState:state];
+}
+
+- (void)storeCurrentYearOfBirth:(NSNumber *)year {
+    if (!year) {
+        return;
+    }
+    [self.userInput setYearOfBirth:year];
+}
+
+- (void)storeCurrentHealthInsuranceType:(HealthInsuranceType)insuranceType {
+    if (!insuranceType) {
+        return;
+    }
+    [self.userInput setHealthInsurance:insuranceType];
+}
+
+
+#pragma mark - Current Values methods
+
+- (HealthInsuranceType)currentHealthInsuranceType {
+    if (self.userInput.healthInsurance) {
+        return self.userInput.healthInsurance;
+    }
+    else {
+        return HealthInsuranceTypeStatutory; // Default
+    }
 }
 
 - (NSDecimalNumber *)currentTaxAllowance {
@@ -130,12 +155,22 @@
     }
 }
 
-- (void)storeCurrentHasChildrenFlag:(BOOL)hasChildren {
-    [self.userInput setHasChildren:hasChildren];
+- (NSDecimalNumber *)currentGrossWage {
+    if (self.userInput.grossWage) {
+        return self.userInput.grossWage;
+    }
+    else {
+        return nil;
+    }
 }
 
-- (void)storeCurrentHasChurchTaxFlag:(BOOL)churchTax {
-    [self.userInput setHasChurchTax:churchTax];
+- (NSNumber *)currentTargetYear {
+    if (self.userInput.targetYear) {
+        return self.userInput.targetYear;
+    }
+    else {
+        return self.userInputDefault.targetYear;
+    }
 }
 
 - (BOOL)currentHasChildrenFlag {
@@ -163,20 +198,6 @@
     else {
         return @"Baden-Württemberg";
     }
-}
-
-- (void)storeCurrentFederalState:(BNFederalState *)state {
-    if (!state) {
-        return;
-    }
-    [self.userInput setFederalState:state];
-}
-
-- (void)storeCurrentYearOfBirth:(NSNumber *)year {
-    if (!year) {
-        return;
-    }
-    [self.userInput setYearOfBirth:year];
 }
 
 - (NSNumber *)currentBirthdayYear {

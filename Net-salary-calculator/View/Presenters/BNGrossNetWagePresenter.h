@@ -30,6 +30,7 @@
 - (void)hasChurchTaxValueChangedTo:(BOOL)newValue;
 - (BOOL)currentHasChildrenValue;
 - (BOOL)currentHasChurchTaxValue;
+- (HealthInsuranceType)currentHealthInsurance;
 - (void)federalStateNameWasSelected:(NSString *)stateName;
 - (NSArray *)stateNamesForDisplay;
 - (NSArray *)availableTaxClasses;

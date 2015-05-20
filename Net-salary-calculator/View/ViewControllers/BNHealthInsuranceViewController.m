@@ -9,6 +9,7 @@
 #import "BNHealthInsuranceViewController.h"
 #import "BNLabelInputCell.h"
 #import "BNLabelSwitchCell.h"
+#import "BNHealthInsurancePresenter.h"
 
 
 // todo refactor: move such enums to constants.h
@@ -36,6 +37,7 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
 @property (nonatomic, assign) NSInteger numberOfSections;
 @property (nonatomic, strong) NSIndexPath *lastSelectedIndexPath;
 @property (nonatomic, strong) NSIndexPath *privateHealthInsuranceCellIndexPath;
+@property (nonatomic, assign) NSInteger selectedInsuranceRow;
 @end
 
 @implementation BNHealthInsuranceViewController
@@ -55,6 +57,8 @@ extern NSString *titleSwitchCell;
     
     [self.tableView registerClass:[BNLabelInputCell class] forCellReuseIdentifier:titleInputCell];
     [self.tableView registerClass:[BNLabelSwitchCell class] forCellReuseIdentifier:titleSwitchCell];
+    
+    self.selectedInsuranceRow = [self.presenter currentSelectedRow];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,6 +137,12 @@ extern NSString *titleSwitchCell;
         else if (indexPath.row == SecondCell) {
             cell = [self configureAsPrivateHealthInsuranceCell:cell];
         }
+        if (self.selectedInsuranceRow == indexPath.row) {
+            [self selectInsuranceCell:cell];
+        }
+        else {
+            [self deselectInsuranceCell:cell];
+        }
     }
     else if (indexPath.section == SecondSection) {
         if (indexPath.row == FirstCell) {
@@ -165,12 +175,16 @@ extern NSString *titleSwitchCell;
         [tableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         [tableView endUpdates];
+        [self.presenter didSelectPrivateHealthInsurance];
     }
     else {
-        [tableView beginUpdates];
         self.numberOfSections = 1;
-        [tableView deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [tableView endUpdates];
+        if (tableView.numberOfSections > 1) {
+            [tableView beginUpdates];
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView endUpdates];
+        }
+        [self.presenter didSelectStatutoryHealthInsurance];
     }
     
     if (self.lastSelectedIndexPath && [self.lastSelectedIndexPath isEqual:indexPath] == NO) {
@@ -194,21 +208,34 @@ extern NSString *titleSwitchCell;
 
 // 'gesetzlich pflichtversichert'
 - (UITableViewCell *)configureAsStatutoryHealthInsuranceCell:(UITableViewCell *)cell {
-    
     cell.textLabel.text = @"Gesetzliche Krankenversicherung";
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
+
     return cell;
 }
 
 // 'privat versichert'
 - (UITableViewCell *)configureAsPrivateHealthInsuranceCell:(UITableViewCell *)cell {
-    
     cell.textLabel.text = @"Private Krankenversicherung";
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.textLabel.textColor = [UIColor grayColor]; // not selected
     
     return cell;
+}
+
+- (void)selectInsuranceCell:(UITableViewCell *)cell {
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (self.selectedInsuranceRow == SecondCell) {
+        if (self.tableView.numberOfSections < 2) {
+            [self.tableView beginUpdates];
+            self.numberOfSections = 2;
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            [self.tableView endUpdates];
+        }
+    }
+}
+
+- (void)deselectInsuranceCell:(UITableViewCell *)cell {
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.textLabel.textColor = [UIColor grayColor]; // not selected
 }
 
 - (UITableViewCell *)configureAsMonthlyContributionCell:(BNLabelInputCell *)cell {

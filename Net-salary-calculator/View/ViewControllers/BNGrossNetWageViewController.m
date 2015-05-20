@@ -136,6 +136,13 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
     [self configureTableView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Reload cells, that can be changed in another views
+    [self.tableView reloadData];
+}
+
 - (void)configureTableView {
     CGFloat tableWidth = CGRectGetWidth(self.tableView.frame);
     CGFloat buttonWidth = tableWidth - 10.0 - 10.0;
@@ -456,7 +463,16 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
 
 - (UITableViewCell *)configureAsHealthInsuranceCell:(UITableViewCell *)cell {
     UILabel *title = (UILabel *)[cell viewWithTag:customLabelCell];
-    [title setText:@"Gesetzlich pflichtversichert"];
+    HealthInsuranceType healthInsurance = [self.presenter currentHealthInsurance];
+    switch (healthInsurance) {
+        case HealthInsuranceTypePrivate:
+            [title setText:@"Privat krankenversichert"];
+            break;
+        default:
+            [title setText:@"Gesetzlich pflichtversichert"];
+            break;
+    }
+    
     return cell;
 }
 

@@ -14,4 +14,7 @@
 @property (nonatomic, weak) id/*<BNHealthInsuranceView>*/ view;
 @property (nonatomic, weak) id<BNGrossNetWageInteractorInput> interactor;
 
+- (void)didSelectPrivateHealthInsurance;
+- (void)didSelectStatutoryHealthInsurance;
+- (NSInteger)currentSelectedRow;
 @end

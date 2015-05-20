@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class BNFederalState;
+#import "BNWageUserInput.h"
 
 @protocol BNGrossNetWageInteractorInput <NSObject>
 // presenter talks to an interacter that implements this input-ptotocol("interface")
@@ -20,10 +19,12 @@
 - (void)storeCurrentFederalState:(BNFederalState *)state;
 - (void)storeCurrentYearOfBirth:(NSNumber *)year;
 - (void)storeCurrentTargetYear:(NSNumber *)year;
+- (void)storeCurrentHealthInsuranceType:(HealthInsuranceType)insuranceType;
 - (void)taxClassSelectedAtDataIndex:(NSInteger)index;
 - (void)federalStateSelected:(BNFederalState *)state;
 - (BOOL)currentHasChildrenFlag;
 - (BOOL)currenthasChurchTaxFlag;
+- (HealthInsuranceType)currentHealthInsuranceType;
 - (NSString *)currentFederalState;
 - (NSArray *)taxClasses;
 - (NSDecimalNumber *)currentGrossWage;

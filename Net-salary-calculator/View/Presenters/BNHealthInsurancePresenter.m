@@ -7,7 +7,30 @@
 //
 
 #import "BNHealthInsurancePresenter.h"
+#import "BNWageUserInput.h"
 
 @implementation BNHealthInsurancePresenter
+
+- (void)didSelectPrivateHealthInsurance {
+    [self.interactor storeCurrentHealthInsuranceType:HealthInsuranceTypePrivate];
+}
+
+- (void)didSelectStatutoryHealthInsurance {
+    [self.interactor storeCurrentHealthInsuranceType:HealthInsuranceTypeStatutory];
+}
+
+- (NSInteger)currentSelectedRow {
+    HealthInsuranceType type = [self.interactor currentHealthInsuranceType];
+    switch (type) {
+        case HealthInsuranceTypeStatutory:
+            return 0;
+            break;
+        case HealthInsuranceTypePrivate:
+            return 1;
+        default:
+            return 0;
+            break;
+    }
+}
 
 @end
