@@ -50,7 +50,7 @@ extern NSString *titleSwitchCell;
     [super viewDidLoad];
     
     self.title = @"Krankenversicherung";
-    self.numberOfSections = 1;
+    
     // set default or last selection option for insurance
     self.lastSelectedIndexPath = [NSIndexPath indexPathForRow:FirstCell inSection:FirstSection];
     self.privateHealthInsuranceCellIndexPath = [NSIndexPath indexPathForRow:SecondCell inSection:FirstSection];
@@ -59,6 +59,13 @@ extern NSString *titleSwitchCell;
     [self.tableView registerClass:[BNLabelSwitchCell class] forCellReuseIdentifier:titleSwitchCell];
     
     self.selectedInsuranceRow = [self.presenter currentSelectedRow];
+    if (self.selectedInsuranceRow == SecondCell) {
+        self.numberOfSections = 2;
+    }
+    else {
+       self.numberOfSections = 1;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -154,54 +161,71 @@ extern NSString *titleSwitchCell;
             cell = [self configureAsEmployerAllowanceCell:(BNLabelSwitchCell *)cell];
         }
     }
-    
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    NSInteger currentSelectedRow = indexPath.row;
+    NSInteger prevSelectedRow = [self.presenter currentSelectedRow];
     UITableViewCell* cellCheck = [tableView
                                   cellForRowAtIndexPath:indexPath];
-    cellCheck.accessoryType = UITableViewCellAccessoryCheckmark;
-    cellCheck.textLabel.textColor = [UIColor blackColor];
-    
-    if ([indexPath isEqual:self.privateHealthInsuranceCellIndexPath]) {
-        // show other input fields
-        [tableView beginUpdates];
-        self.numberOfSections = 2;
-        [tableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        [tableView endUpdates];
-        [self.presenter didSelectPrivateHealthInsurance];
-    }
-    else {
-        self.numberOfSections = 1;
+    UITableViewCell *prevCell = nil;
+    if (currentSelectedRow == FirstCell && prevSelectedRow == SecondCell) {
+        // Statutory Health Insurance
         if (tableView.numberOfSections > 1) {
+            // Remove second section
+            self.numberOfSections = 1;
             [tableView beginUpdates];
-            [tableView deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
             [tableView endUpdates];
         }
+        // Inform our presenter
         [self.presenter didSelectStatutoryHealthInsurance];
+        // Visually deselect previous
+        prevCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:SecondCell inSection:FirstSection]];
     }
+    else if (currentSelectedRow == SecondCell && prevSelectedRow == FirstCell) {
+        // Insert second section
+        self.numberOfSections = 2;
+        [tableView beginUpdates];
+        [tableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+        //self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        [tableView endUpdates];
+        // Inform our presenter
+        [self.presenter didSelectPrivateHealthInsurance];
+        // Cell separator dissapears after inserting new section
+        // Fix: reload first section
+        self.selectedInsuranceRow = [self.presenter currentSelectedRow];
+        prevCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:FirstCell inSection:FirstSection]];
+        NSRange range = NSMakeRange(0, 1);
+        NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+        [tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
+    }
+    if (prevCell) {
+        [self deselectCell:prevCell];
+    }
+    // Visually select current
+    [self selectCell:cellCheck];
     
-    if (self.lastSelectedIndexPath && [self.lastSelectedIndexPath isEqual:indexPath] == NO) {
-        UITableViewCell* uncheckCell = [tableView
-                                        cellForRowAtIndexPath:self.lastSelectedIndexPath];
-        uncheckCell.accessoryType = UITableViewCellAccessoryNone;
-        uncheckCell.textLabel.textColor = [UIColor grayColor];
-    }
     self.lastSelectedIndexPath = indexPath;
-    
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* uncheckCell = [tableView
                                     cellForRowAtIndexPath:indexPath];
-    uncheckCell.accessoryType = UITableViewCellAccessoryNone;
-    uncheckCell.textLabel.textColor = [UIColor grayColor];
+    [self deselectCell:uncheckCell];
+}
+
+- (void)deselectCell:(UITableViewCell *)cell {
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.textLabel.textColor = [UIColor grayColor];
+}
+
+- (void)selectCell:(UITableViewCell *)cell {
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    cell.textLabel.textColor = [UIColor blackColor];
 }
 
 // todo: should be called from presenter!

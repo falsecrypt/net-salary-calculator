@@ -24,12 +24,10 @@
     switch (type) {
         case HealthInsuranceTypeStatutory:
             return 0;
-            break;
         case HealthInsuranceTypePrivate:
             return 1;
         default:
             return 0;
-            break;
     }
 }
 

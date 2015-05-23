@@ -128,9 +128,6 @@
 }
 
 - (void)storeCurrentHealthInsuranceType:(HealthInsuranceType)insuranceType {
-    if (!insuranceType) {
-        return;
-    }
     [self.userInput setHealthInsurance:insuranceType];
 }
 
