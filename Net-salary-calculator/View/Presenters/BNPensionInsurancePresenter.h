@@ -1,5 +1,5 @@
 //
-//  BNUnemploymentInsurancePresenter.h
+//  BNStatutoryInsurancePresenter.h
 //  Net_salary_calculator
 //
 //  Created by Pavel Ermolin on 30.11.14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BNCommonInsurancePresenter.h"
 
-@interface BNUnemploymentInsurancePresenter : NSObject <BNCommonInsurancePresenter>
+@interface BNPensionInsurancePresenter : NSObject <BNCommonInsurancePresenter>
 
 @property (nonatomic, weak) id<BNGrossNetWageInteractorInput> interactor;
 

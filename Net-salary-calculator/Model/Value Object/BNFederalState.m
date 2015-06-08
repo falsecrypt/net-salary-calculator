@@ -10,4 +10,8 @@
 
 @implementation BNFederalState
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"BNFederalState description:%@\n name: %@\nabbreviation: %@\n",[super description], self.name, self.abbreviation];
+}
 @end

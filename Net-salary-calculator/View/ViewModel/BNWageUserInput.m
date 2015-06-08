@@ -1,5 +1,3 @@
-//
-//  BNWageUserInput.m
 //  Brutto-Netto-Rechner
 //
 //  Created by Administrator on 02.11.14.
@@ -13,9 +11,42 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"\nUser grossWage: %@ \nUser taxAllowance: %@\ntaxClass = %@\nhasChurchTax = %i\nhasChildren = %i\nfederalState = %@\nyearOfBirth = %@",
-            _grossWage, _taxAllowance, _taxClass, _hasChurchTax, _hasChildren, _federalState.name, _yearOfBirth];
-    
+    return [NSString stringWithFormat:@"BNWageUserInput description:%@\ngrossWage: %@\ntaxAllowance: %@\ntimePeriod: %@\ntargetYear: %@\ntaxClass: %@\nhasChurchTax: %i\nhasChildren: %i\nyearOfBirth: %@\nKrankenversicherung: %@\nRentenversicherung: %@\nArbeitslosenversicherung: %@\n",[super description], self.grossWage, self.taxAllowance, self.timePeriod, self.targetYear, self.taxClass, self.hasChurchTax, self.hasChildren, self.yearOfBirth, [self nameForHealthInsuranceType:self.healthInsurance], [self nameForCommonInsuranceType:self.pensionInsurance], [self nameForCommonInsuranceType:self.unemploymentInsurance]];
+}
+
+- (NSString*)nameForCommonInsuranceType:(CommonInsuranceType)type {
+    switch (type) {
+        case CommonInsuranceTypeStatutory:
+            return @"Gesetzlich pflichtversichert";
+            break;
+        case CommonInsuranceTypeUninsured:
+            return @"Nicht versichert";
+            break;
+        case CommonInsuranceTypeEmployerContributionOnly:
+            return @"Arbeitegeber Anteil";
+            break;
+        case CommonInsuranceTypeEmployeeContributionOnly:
+            return @"Arbeitnehmer Anteil";
+        default:
+            return nil;
+            break;
+    };
+    return nil;
+}
+
+- (NSString*)nameForHealthInsuranceType:(HealthInsuranceType)type {
+    switch (type) {
+        case HealthInsuranceTypeStatutory:
+            return @"Gesetzlich versichert";
+            break;
+        case HealthInsuranceTypePrivate:
+            return @"Privat versichert";
+            break;
+        default:
+            return nil;
+            break;
+    };
+    return nil;
 }
 
 @end

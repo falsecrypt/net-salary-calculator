@@ -51,26 +51,6 @@
  
  */
 
-typedef NS_ENUM(NSInteger, BNCellNumber) {
-    FirstCell = 0,
-    SecondCell,
-    ThirdCell,
-    FourthCell,
-    FifthCell,
-    SixthCell,
-    SeventhCell,
-    EighthCell,
-    NinthCell
-};
-
-typedef NS_ENUM(NSInteger, BNSectionNumber) {
-    FirstSection = 0,
-    SecondSection,
-    ThirdSection,
-    FourthSection,
-    FifthSection
-};
-
 
 @interface BNGrossNetWageViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) BNInlinePickerViewManager *pickerViewCellsManager;
@@ -478,13 +458,13 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
 
 - (UITableViewCell *)configureAsPensionInsuranceCell:(UITableViewCell *)cell {
     UILabel *title = (UILabel *)[cell viewWithTag:customLabelCell];
-    [title setText:@"Gesetzlich pflichtversichert"];
+    [title setText:[self.presenter currentPensionInsuranceType]];
     return cell;
 }
 
 - (UITableViewCell *)configureAsUnemploymentInsuranceCell:(UITableViewCell *)cell {
     UILabel *title = (UILabel *)[cell viewWithTag:customLabelCell];
-    [title setText:@"Gesetzlich pflichtversichert"];
+    [title setText:[self.presenter currentUnemploymentInsuranceType]];
     return cell;
 }
 
@@ -668,7 +648,7 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
         data = @[ @"Woche", @"Monat", @"Jahr"];
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:YearSelectorCellKey]]) {
-        data = @[ @"2011", @"2012", @"2013", @"2014"];
+        data = [self.presenter availableYearsToChoose];
     }
     else if ([indexPath isEqual:[self.pickerIndexPathForIdentifier objectForKey:TaxClassSelectorCellKey]]) {
         data = [self.presenter availableTaxClasses];

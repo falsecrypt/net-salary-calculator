@@ -41,6 +41,10 @@
     return self;
 }
 
+/**
+ * The UI must distinguish between the state 'not entered any value yet' and 'has already some value'
+ * to e.g. show a placeholder in a input field
+ */
 - (void)setupDefaultUserInput {
     _userInputDefault = [BNWageUserInput new];
     _userInputDefault.hasChildren = NO;
@@ -95,22 +99,27 @@
 
 - (void)storeCurrentTargetYear:(NSNumber *)year {
     [self.userInput setTargetYear:year]; // can be null
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentGrossWage:(NSDecimalNumber *)wage {
     [self.userInput setGrossWage:wage]; // can be null
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentTaxAllowance:(NSDecimalNumber *)value {
     [self.userInput setTaxAllowance:value];
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentHasChildrenFlag:(BOOL)hasChildren {
     [self.userInput setHasChildren:hasChildren];
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentHasChurchTaxFlag:(BOOL)churchTax {
     [self.userInput setHasChurchTax:churchTax];
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentFederalState:(BNFederalState *)state {
@@ -118,6 +127,7 @@
         return;
     }
     [self.userInput setFederalState:state];
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentYearOfBirth:(NSNumber *)year {
@@ -125,10 +135,22 @@
         return;
     }
     [self.userInput setYearOfBirth:year];
+    DLog(@"%@", self.userInput);
 }
 
 - (void)storeCurrentHealthInsuranceType:(HealthInsuranceType)insuranceType {
     [self.userInput setHealthInsurance:insuranceType];
+    DLog(@"%@", self.userInput);
+}
+
+- (void)storeCurrentInsuranceTypeForPensionInsurance:(CommonInsuranceType)type {
+    [self.userInput setPensionInsurance:type];
+    DLog(@"%@", self.userInput);
+}
+
+- (void)storeCurrentInsuranceTypeForUnemploymentInsurance:(CommonInsuranceType)type {
+    [self.userInput setUnemploymentInsurance:type];
+    DLog(@"%@", self.userInput);
 }
 
 
@@ -206,9 +228,32 @@
     }
 }
 
+- (CommonInsuranceType)currentPensionInsuranceType {
+    if (self.userInput.pensionInsurance) {
+        return self.userInput.pensionInsurance;
+    }
+    else {
+        return CommonInsuranceTypeStatutory;
+    }
+}
+
+- (CommonInsuranceType)currentUnemploymentInsuranceType {
+    if (self.userInput.unemploymentInsurance) {
+        return self.userInput.unemploymentInsurance;
+    }
+    else {
+        return CommonInsuranceTypeStatutory;
+    }
+}
+
 - (NSArray *)taxClasses {
     // return all tax class names
     return [self.taxClassOptions valueForKeyPath:@"name"];
+}
+
+- (NSArray *)possiblePayrollYears {
+    // current and previous for the first release
+    return @[@([BNUtility getCurrentYear]), @([BNUtility getPreviousYear])];
 }
 
 - (void)taxClassSelectedAtDataIndex:(NSInteger)index {

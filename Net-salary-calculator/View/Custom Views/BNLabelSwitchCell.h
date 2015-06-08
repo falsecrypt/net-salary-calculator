@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, SwitchControlState) {
-    SwitchControlStateOn,
-    SwitchControlStateOff
-};
+
 
 @interface BNLabelSwitchCell : UITableViewCell
 

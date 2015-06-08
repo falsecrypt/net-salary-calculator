@@ -20,17 +20,22 @@
 - (void)storeCurrentYearOfBirth:(NSNumber *)year;
 - (void)storeCurrentTargetYear:(NSNumber *)year;
 - (void)storeCurrentHealthInsuranceType:(HealthInsuranceType)insuranceType;
+- (void)storeCurrentInsuranceTypeForPensionInsurance:(CommonInsuranceType)type;
+- (void)storeCurrentInsuranceTypeForUnemploymentInsurance:(CommonInsuranceType)type;
 - (void)taxClassSelectedAtDataIndex:(NSInteger)index;
 - (void)federalStateSelected:(BNFederalState *)state;
 - (BOOL)currentHasChildrenFlag;
 - (BOOL)currenthasChurchTaxFlag;
 - (HealthInsuranceType)currentHealthInsuranceType;
+- (CommonInsuranceType)currentPensionInsuranceType;
+- (CommonInsuranceType)currentUnemploymentInsuranceType;
 - (NSString *)currentFederalState;
 - (NSArray *)taxClasses;
 - (NSDecimalNumber *)currentGrossWage;
 - (NSDecimalNumber *)currentTaxAllowance;
 - (NSNumber *)currentBirthdayYear;
 - (NSNumber *)currentTargetYear;
+- (NSArray *)possiblePayrollYears;
 
 @end
 

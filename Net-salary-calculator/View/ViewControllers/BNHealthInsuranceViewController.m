@@ -14,24 +14,6 @@
 
 // todo refactor: move such enums to constants.h
 
-typedef NS_ENUM(NSInteger, BNCellNumber) {
-    FirstCell = 0,
-    SecondCell,
-    ThirdCell,
-    FourthCell,
-    FifthCell,
-    SixthCell,
-    SeventhCell,
-    EighthCell,
-    NinthCell
-};
-
-typedef NS_ENUM(NSInteger, BNSectionNumber) {
-    FirstSection = 0,
-    SecondSection,
-    ThirdSection,
-    FourthSection
-};
 
 @interface BNHealthInsuranceViewController ()<UITextFieldDelegate>
 @property (nonatomic, assign) NSInteger numberOfSections;

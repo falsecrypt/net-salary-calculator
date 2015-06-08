@@ -13,6 +13,8 @@
 #import "BNHealthInsuranceViewController.h"
 #import "BNCommonInsuranceViewController.h"
 #import "BNHealthInsurancePresenter.h"
+#import "BNPensionInsurancePresenter.h"
+#import "BNUnemploymentInsurancePresenter.h"
 
 @interface BNGrossNetWagePresenter ()
 @property (nonatomic, strong) BNFederalStateRepository *stateRepository;
@@ -126,6 +128,17 @@
     return [self.interactor taxClasses];
 }
 
+- (NSArray *)availableYearsToChoose {
+    NSArray *years = [self.interactor possiblePayrollYears]; // list with numbers
+    NSMutableArray *yearsForDisplay = [[NSMutableArray alloc] initWithCapacity:[years count]];
+    NSInteger i = 0;
+    for (NSNumber *year in years) {
+        [yearsForDisplay insertObject:[NSString stringWithFormat:@"%@", year] atIndex:i];
+        i++;
+    }
+    return [yearsForDisplay copy];
+}
+
 - (NSString *)currentFederalState {
     return [self.interactor currentFederalState];
 }
@@ -146,11 +159,17 @@
 
 - (void)didSelectPensionInsuranceCell {
     BNCommonInsuranceViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypePension];
+    BNPensionInsurancePresenter *presenter = [[BNPensionInsurancePresenter alloc] init];
+    destination.presenter = presenter;
+    presenter.interactor = self.interactor;
     [self.view navigateToViewController:destination];
 }
 
 - (void)didSelectUnemploymentInsuranceCell {
     BNCommonInsuranceViewController *destination = [[BNCommonInsuranceViewController alloc] initWithStyle:UITableViewStyleGrouped insuranceType:BNInsuranceTypeUnemployment];
+    BNUnemploymentInsurancePresenter *presenter = [[BNUnemploymentInsurancePresenter alloc] init];
+    destination.presenter = presenter;
+    presenter.interactor = self.interactor;
     [self.view navigateToViewController:destination];
 }
 
@@ -180,6 +199,52 @@
 
 - (HealthInsuranceType)currentHealthInsurance {
     return [self.interactor currentHealthInsuranceType];
+}
+
+- (NSString *)currentPensionInsuranceType {
+    CommonInsuranceType currentType = [self.interactor currentPensionInsuranceType];
+    return [self nameForCommonInsuranceType:currentType];
+}
+
+- (NSString *)currentUnemploymentInsuranceType {
+    CommonInsuranceType currentType = [self.interactor currentUnemploymentInsuranceType];
+    return [self nameForCommonInsuranceType:currentType];
+}
+
+// Translator methods
+- (NSString*)nameForCommonInsuranceType:(CommonInsuranceType)type {
+    switch (type) {
+        case CommonInsuranceTypeStatutory:
+            return @"Gesetzlich pflichtversichert";
+            break;
+        case CommonInsuranceTypeUninsured:
+            return @"Nicht versichert";
+            break;
+        case CommonInsuranceTypeEmployerContributionOnly:
+            return @"Arbeitegeber Anteil";
+            break;
+        case CommonInsuranceTypeEmployeeContributionOnly:
+            return @"Arbeitnehmer Anteil";
+        default:
+            return nil;
+            break;
+    };
+    return nil;
+}
+
+- (NSString*)nameForHealthInsuranceType:(HealthInsuranceType)type {
+    switch (type) {
+        case HealthInsuranceTypeStatutory:
+            return @"Gesetzlich versichert";
+            break;
+        case HealthInsuranceTypePrivate:
+            return @"Privat versichert";
+            break;
+        default:
+            return nil;
+            break;
+    };
+    return nil;
 }
 
 @end

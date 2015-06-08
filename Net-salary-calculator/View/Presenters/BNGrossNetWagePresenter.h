@@ -34,6 +34,7 @@
 - (void)federalStateNameWasSelected:(NSString *)stateName;
 - (NSArray *)stateNamesForDisplay;
 - (NSArray *)availableTaxClasses;
+- (NSArray*)availableYearsToChoose;
 - (NSString *)currentFederalState;
 - (void)didSelectHealthInsuranceCell;
 - (void)didSelectPensionInsuranceCell;
@@ -45,5 +46,6 @@
 - (NSDecimalNumber *)currentTaxAllowanceValue;
 - (NSNumber *)currentBirthdayYearValue;
 - (NSNumber *)currentTargetYearValue;
-
+- (NSString *)currentPensionInsuranceType;
+- (NSString *)currentUnemploymentInsuranceType;
 @end

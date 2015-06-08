@@ -37,7 +37,7 @@
 		12C42B5719DF231900262DB4 /* BNHealthInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C42B5619DF231900262DB4 /* BNHealthInsuranceViewController.m */; };
 		12EE40F219BB954B0076CE80 /* BNLabelInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */; };
 		840EA8991A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */; };
-		840EA89C1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */; };
+		840EA89C1A2B8E770042EB38 /* BNPensionInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89B1A2B8E770042EB38 /* BNPensionInsurancePresenter.m */; };
 		840EA89F1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */; };
 		8427B0371A507B5600FDD8D2 /* BNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8427B0361A507B5600FDD8D2 /* BNUtility.m */; };
 		843124D61A2BE5D100F0F8A9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 843124D41A2BE5D100F0F8A9 /* Model.xcdatamodeld */; };
@@ -45,6 +45,8 @@
 		843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A8AEF1A067CD40058004E /* BNWageUserInput.m */; };
 		848286781A06EC4E003DF0F6 /* BNFederalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 848286771A06EC4E003DF0F6 /* BNFederalState.m */; };
 		8482867C1A06EEA9003DF0F6 /* BNFederalStateRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482867B1A06EEA9003DF0F6 /* BNFederalStateRepository.m */; };
+		849D5C3E1B1093FD00CBCD83 /* BNAppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 849D5C3D1B1093FD00CBCD83 /* BNAppConstants.m */; };
+		84B436C91B18DA55009B0EE4 /* BNDomainConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B436C81B18DA55009B0EE4 /* BNDomainConstants.m */; };
 		9ADCD674D7070DBC6A3FB2EC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AD775D7D49E3BED7048886 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -110,8 +112,8 @@
 		12EE40F119BB954B0076CE80 /* BNLabelInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLabelInputCell.m; sourceTree = "<group>"; };
 		840EA8971A2B8D5C0042EB38 /* BNHealthInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNHealthInsurancePresenter.h; sourceTree = "<group>"; };
 		840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNHealthInsurancePresenter.m; sourceTree = "<group>"; };
-		840EA89A1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNStatutoryInsurancePresenter.h; sourceTree = "<group>"; };
-		840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNStatutoryInsurancePresenter.m; sourceTree = "<group>"; };
+		840EA89A1A2B8E770042EB38 /* BNPensionInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPensionInsurancePresenter.h; sourceTree = "<group>"; };
+		840EA89B1A2B8E770042EB38 /* BNPensionInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNPensionInsurancePresenter.m; sourceTree = "<group>"; };
 		840EA89D1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUnemploymentInsurancePresenter.h; sourceTree = "<group>"; };
 		840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNUnemploymentInsurancePresenter.m; sourceTree = "<group>"; };
 		8427B0351A507B5600FDD8D2 /* BNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNUtility.h; sourceTree = "<group>"; };
@@ -121,10 +123,15 @@
 		84316B9B19FDA78B0097A4CB /* BNWageTaxCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageTaxCalculator.m; sourceTree = "<group>"; };
 		843A8AEE1A067CD40058004E /* BNWageUserInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNWageUserInput.h; sourceTree = "<group>"; };
 		843A8AEF1A067CD40058004E /* BNWageUserInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNWageUserInput.m; sourceTree = "<group>"; };
+		84614E321B2610D20042808F /* BNCommonInsurancePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNCommonInsurancePresenter.h; sourceTree = "<group>"; };
 		848286761A06EC4E003DF0F6 /* BNFederalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNFederalState.h; sourceTree = "<group>"; };
 		848286771A06EC4E003DF0F6 /* BNFederalState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNFederalState.m; sourceTree = "<group>"; };
 		8482867A1A06EEA9003DF0F6 /* BNFederalStateRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNFederalStateRepository.h; sourceTree = "<group>"; };
 		8482867B1A06EEA9003DF0F6 /* BNFederalStateRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNFederalStateRepository.m; sourceTree = "<group>"; };
+		849D5C3C1B1093FD00CBCD83 /* BNAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNAppConstants.h; sourceTree = "<group>"; };
+		849D5C3D1B1093FD00CBCD83 /* BNAppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNAppConstants.m; sourceTree = "<group>"; };
+		84B436C71B18DA55009B0EE4 /* BNDomainConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNDomainConstants.h; sourceTree = "<group>"; };
+		84B436C81B18DA55009B0EE4 /* BNDomainConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNDomainConstants.m; sourceTree = "<group>"; };
 		88521E6D692F58DBEC15C7D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BAE26D2033CD16D9ECF4540C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9AD775D7D49E3BED7048886 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +192,7 @@
 		12052F8319B755CA00B83679 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				849D5C381B10924300CBCD83 /* Constants */,
 				848286791A06EE26003DF0F6 /* Repository */,
 				848286751A06EBDD003DF0F6 /* Value Object */,
 				123E124D19BB76AC00F4E967 /* Manager */,
@@ -225,6 +233,7 @@
 		12052F8819B757FC00B83679 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				849D5C361B1091C100CBCD83 /* Constants */,
 				843A8AED1A067C920058004E /* ViewModel */,
 				126AFE0119BC81600089432E /* Manager */,
 				12EE40EF19BB94EA0076CE80 /* Custom Views */,
@@ -252,10 +261,11 @@
 				1214343C19B86B1C00078C18 /* BNGrossNetWagePresenter.m */,
 				840EA8971A2B8D5C0042EB38 /* BNHealthInsurancePresenter.h */,
 				840EA8981A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m */,
-				840EA89A1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.h */,
-				840EA89B1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m */,
+				840EA89A1A2B8E770042EB38 /* BNPensionInsurancePresenter.h */,
+				840EA89B1A2B8E770042EB38 /* BNPensionInsurancePresenter.m */,
 				840EA89D1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.h */,
 				840EA89E1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m */,
+				84614E321B2610D20042808F /* BNCommonInsurancePresenter.h */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -463,6 +473,24 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		849D5C361B1091C100CBCD83 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				849D5C3C1B1093FD00CBCD83 /* BNAppConstants.h */,
+				849D5C3D1B1093FD00CBCD83 /* BNAppConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		849D5C381B10924300CBCD83 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				84B436C71B18DA55009B0EE4 /* BNDomainConstants.h */,
+				84B436C81B18DA55009B0EE4 /* BNDomainConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -635,7 +663,7 @@
 				1214343919B8661E00078C18 /* BNGrossNetWageViewController.m in Sources */,
 				843A8AF01A067CD40058004E /* BNWageUserInput.m in Sources */,
 				8427B0371A507B5600FDD8D2 /* BNUtility.m in Sources */,
-				840EA89C1A2B8E770042EB38 /* BNStatutoryInsurancePresenter.m in Sources */,
+				840EA89C1A2B8E770042EB38 /* BNPensionInsurancePresenter.m in Sources */,
 				84316B9C19FDA78B0097A4CB /* BNWageTaxCalculator.m in Sources */,
 				1223B9A519BB7D2500C9979C /* BNWageDataManager.m in Sources */,
 				1216EE9219B5C5E5009A0CBC /* BNAppDelegate.m in Sources */,
@@ -643,6 +671,7 @@
 				126AFE0719BC8FFD0089432E /* BNPickerViewCell.m in Sources */,
 				123E125019BB775000F4E967 /* BNCoreDataStore.m in Sources */,
 				1214344019B86C1200078C18 /* BNGrossNetWageInteractor.m in Sources */,
+				84B436C91B18DA55009B0EE4 /* BNDomainConstants.m in Sources */,
 				840EA8991A2B8D5C0042EB38 /* BNHealthInsurancePresenter.m in Sources */,
 				126AFE0019BC815A0089432E /* BNInlinePickerViewManager.m in Sources */,
 				8482867C1A06EEA9003DF0F6 /* BNFederalStateRepository.m in Sources */,
@@ -653,6 +682,7 @@
 				12366A7419CE17CC006A89C7 /* BNLabelSwitchCell.m in Sources */,
 				12464C6E19E1B7D3006A8CA9 /* BNCommonInsuranceViewController.m in Sources */,
 				1216EE8E19B5C5E5009A0CBC /* main.m in Sources */,
+				849D5C3E1B1093FD00CBCD83 /* BNAppConstants.m in Sources */,
 				843124D61A2BE5D100F0F8A9 /* Model.xcdatamodeld in Sources */,
 				840EA89F1A2B8EC00042EB38 /* BNUnemploymentInsurancePresenter.m in Sources */,
 			);

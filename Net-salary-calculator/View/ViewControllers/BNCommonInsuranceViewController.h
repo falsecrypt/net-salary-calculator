@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSInteger, BNInsuranceType) {
-    BNInsuranceTypePension,
-    BNInsuranceTypeUnemployment
-};
+#import "BNCommonInsurancePresenter.h"
 
 @interface BNCommonInsuranceViewController : UITableViewController
 
+@property (nonatomic, strong) id<BNCommonInsurancePresenter> presenter;
+
 - (id)initWithStyle:(UITableViewStyle)style insuranceType:(BNInsuranceType)type;
+
 
 @end

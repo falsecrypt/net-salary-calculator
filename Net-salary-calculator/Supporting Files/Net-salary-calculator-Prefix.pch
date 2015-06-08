@@ -23,4 +23,6 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import <MagicalRecord/CoreData+MagicalRecord.h>
+    #import "BNAppConstants.h"
+    #import "BNDomainConstants.h"
 #endif

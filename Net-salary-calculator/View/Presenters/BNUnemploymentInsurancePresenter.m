@@ -10,4 +10,20 @@
 
 @implementation BNUnemploymentInsurancePresenter
 
+- (void)didSelectStatutoryHealthInsurance {
+    [self.interactor storeCurrentInsuranceTypeForUnemploymentInsurance:CommonInsuranceTypeStatutory];
+}
+
+- (void)didSelectNonInsured {
+    [self.interactor storeCurrentInsuranceTypeForUnemploymentInsurance:CommonInsuranceTypeUninsured];
+}
+
+- (void)didSelectEmployerContributionOnly {
+    [self.interactor storeCurrentInsuranceTypeForUnemploymentInsurance:CommonInsuranceTypeEmployerContributionOnly];
+}
+
+- (void)didSelectEmployeeContributionOnly {
+    [self.interactor storeCurrentInsuranceTypeForUnemploymentInsurance:CommonInsuranceTypeEmployeeContributionOnly];
+}
+
 @end

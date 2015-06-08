@@ -8,26 +8,14 @@
 
 #import "BNCommonInsuranceViewController.h"
 
-// todo refactor: move such enums to constants.h
-
-typedef NS_ENUM(NSInteger, BNCellNumber) {
-    FirstCell = 0,
-    SecondCell,
-    ThirdCell,
-    FourthCell,
-    FifthCell,
-    SixthCell,
-    SeventhCell,
-    EighthCell,
-    NinthCell
+// View specific enum
+typedef NS_ENUM(NSInteger, BNInsuranceCellOption) {
+    BNInsuranceCellStatutory = 0,
+    BNInsuranceCellNonInsured,
+    BNInsuranceCellEmployerContributionOnly,
+    BNInsuranceCellEmployeeContributionOnly
 };
 
-typedef NS_ENUM(NSInteger, BNSectionNumber) {
-    FirstSection = 0,
-    SecondSection,
-    ThirdSection,
-    FourthSection
-};
 
 @interface BNCommonInsuranceViewController ()
 @property (nonatomic, strong) NSIndexPath *lastSelectedIndexPath;
@@ -116,6 +104,23 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
     }
     self.lastSelectedIndexPath = indexPath;
     
+    switch (cellCheck.tag) {
+        case BNInsuranceCellStatutory:
+            [self.presenter didSelectStatutoryHealthInsurance];
+            break;
+        case BNInsuranceCellNonInsured:
+            [self.presenter didSelectNonInsured];
+            break;
+        case BNInsuranceCellEmployerContributionOnly:
+            [self.presenter didSelectEmployerContributionOnly];
+            break;
+        case BNInsuranceCellEmployeeContributionOnly:
+            [self.presenter didSelectEmployeeContributionOnly];
+            break;
+        default:
+            break;
+    }
+    
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,7 +134,7 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
     
     cell.textLabel.text = @"Gesetzlich pflichtversichert";
     cell.accessoryType = UITableViewCellAccessoryCheckmark; // todo, set current selected
-    
+    cell.tag = BNInsuranceCellStatutory;
     return cell;
 }
 
@@ -137,6 +142,7 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
     
     cell.textLabel.text = @"Nicht versichert";
     cell.textLabel.textColor = [UIColor grayColor];
+    cell.tag = BNInsuranceCellNonInsured;
     return cell;
 }
 
@@ -144,6 +150,7 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
     
     cell.textLabel.text = @"Arbeitgeber Anteil";
     cell.textLabel.textColor = [UIColor grayColor];
+    cell.tag = BNInsuranceCellEmployerContributionOnly;
     return cell;
 }
 
@@ -151,6 +158,7 @@ typedef NS_ENUM(NSInteger, BNSectionNumber) {
     
     cell.textLabel.text = @"Arbeitnehmer Anteil";
     cell.textLabel.textColor = [UIColor grayColor];
+    cell.tag = BNInsuranceCellEmployeeContributionOnly;
     return cell;
 }
 

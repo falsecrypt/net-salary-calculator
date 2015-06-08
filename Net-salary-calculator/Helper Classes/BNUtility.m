@@ -29,4 +29,12 @@
     return [components year];
 }
 
++ (NSInteger)getPreviousYear {
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setYear:-1];
+    NSDate *prevYearDate = [[NSCalendar currentCalendar] dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:prevYearDate];
+    return [components year];
+}
+
 @end

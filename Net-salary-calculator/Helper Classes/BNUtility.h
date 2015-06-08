@@ -12,5 +12,5 @@
 
 + (NSString *)currencyStringFromDecimalNumber:(NSDecimalNumber *)number;
 + (NSInteger)getCurrentYear;
-
++ (NSInteger)getPreviousYear;
 @end
