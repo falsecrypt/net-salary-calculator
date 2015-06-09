@@ -181,6 +181,11 @@
     [self.interactor federalStateSelected:[[self.stateRepository availableStates] objectAtIndex:dataIndex]];
 }
 
+- (void)didTouchSubmitButton {
+    // yeah we are to take off!
+    DLog(@"Time to calculate some values..");
+}
+
 - (NSDecimalNumber *)currentGrossWageValue {
     return [self.interactor currentGrossWage];
 }

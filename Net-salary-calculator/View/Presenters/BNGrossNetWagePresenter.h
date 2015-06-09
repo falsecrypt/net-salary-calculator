@@ -41,6 +41,7 @@
 - (void)didSelectUnemploymentInsuranceCell;
 - (void)didSelectTaxClassValueIndex:(NSInteger)dataIndex;
 - (void)didSelectFederalStateValueIndex:(NSInteger)dataIndex;
+- (void)didTouchSubmitButton;
 // current values
 - (NSDecimalNumber *)currentGrossWageValue;
 - (NSDecimalNumber *)currentTaxAllowanceValue;

@@ -126,20 +126,30 @@ NSString * const ChildAllowanceCellKey = @"childAllowanceCell";
 - (void)configureTableView {
     CGFloat tableWidth = CGRectGetWidth(self.tableView.frame);
     CGFloat buttonWidth = tableWidth - 10.0 - 10.0;
-    UIView *footerContainer = [[UIView alloc]initWithFrame:CGRectMake(0.0, 25.0, tableWidth, 44.0)];
+    UIView *footerContainer = [[UIView alloc]initWithFrame:CGRectMake(0.0, 25.0, tableWidth, 70.0)];
     [footerContainer setBackgroundColor:[UIColor clearColor]];
     footerContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    UIButton *submitButton = [self createSubmitButton];
+    [submitButton setFrame:CGRectMake(10.0, 25.0, buttonWidth, 44.0)];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [submitButton addTarget:self.presenter
+                 action:@selector(didTouchSubmitButton)
+       forControlEvents:UIControlEventTouchUpInside];
+#pragma clang diagnostic pop
+    [footerContainer addSubview:submitButton];
+    self.tableView.tableFooterView = footerContainer;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 60.0, 0);
+}
+
+- (UIButton *)createSubmitButton {
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeSystem];
     [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [submit setTitle:@"Berechnen" forState:UIControlStateNormal];
     [submit.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:17.0f]];
     [submit setBackgroundColor:[UIColor colorWithRed:46.0/256.0 green:204.0/256.0 blue:113.0/256.0 alpha:1.0]];
-    [submit setFrame:CGRectMake(10.0, 25.0, buttonWidth, 44.0)];
     submit.layer.cornerRadius = 4;
-    [footerContainer addSubview:submit];
-    self.tableView.tableFooterView = footerContainer;
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 60.0, 0);
+    return submit;
 }
 
 - (void)registerCellClasses {
